@@ -1,14 +1,30 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 // src/app/components/Header.tsx
 export default function Header() {
-    return (
-      <header style={{ backgroundColor: '#333', padding: '10px 0', color: 'white' }}>
-        <nav style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <ul style={{ listStyleType: 'none', display: 'flex', gap: '20px', margin: 0, padding: 0 }}>
-            <li><a href="/" style={{ color: 'white', textDecoration: 'none' }}>Home</a></li>
-            <li><a href="/about" style={{ color: 'white', textDecoration: 'none' }}>About</a></li>
-            <li><a href="/courses" style={{ color: 'white', textDecoration: 'none' }}>Courses</a></li>
-          </ul>
-        </nav>
-      </header>
-    );
-  }
+  return (
+    <div className="flex items-center justify-around flex-wrap">
+      <div className="flex ">
+        <Button
+          className="w-[129px] h-[49px] mt-[14px] rounded-2xl bg-[#586CFF]"
+          asChild
+        >
+          <Link href="/login">ثبت نام و ورود</Link>
+        </Button>
+      </div>
+      <div className="w-[228px] h-[21px] flex">
+        <Button className=" font-bold text-[16px]" variant="link">
+          درباره ما
+        </Button>
+        <Button className=" font-bold text-[16px]" variant="link">
+          مقالات
+        </Button>
+        <Button className=" font-bold text-[16px]" variant="link">
+          خانه
+        </Button>
+      </div>
+      <div className="flex font-serif font-normal text-2xl">PIZA</div>
+    </div>
+  );
+}
