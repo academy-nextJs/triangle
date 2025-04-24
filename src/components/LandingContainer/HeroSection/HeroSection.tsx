@@ -8,13 +8,13 @@ const HeroSection = () => {
       <div className="w-[457px] h-[594px] bg-blue-800 "></div>
       <div className="flax ">
         <div className="w-[418px] h-[104px]">
-          <span className="font-bold text-4xl ">
+          <span className="font-bold text-4xl text-right">
             {" "}
             راحت ترین راه برای پیدا کردن خونه مورد علاقت
           </span>
         </div>
         <div className="w-[418px] h-[104px]">
-          <p className="font-semibold text-[#727272] ">
+          <p className="font-semibold text-[#727272] text-right">
             {" "}
             رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب خوردن
             فقط در پیزا
