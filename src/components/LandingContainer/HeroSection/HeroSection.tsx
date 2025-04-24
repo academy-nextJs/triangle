@@ -26,7 +26,7 @@ const HeroSection = () => {
             asChild
           >
             <Link href="/login">
-              {" "}
+              {" "}s
               <LuArrowLeft /> رهن و اجاره ملک
             </Link>
           </Button>
