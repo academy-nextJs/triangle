@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
 import { getServerCookie } from '@/utils/helper/cookie/getServerCookie';
 
 const httpServer = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
 });
 
 httpServer.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
