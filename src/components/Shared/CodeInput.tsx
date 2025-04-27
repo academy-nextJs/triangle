@@ -16,7 +16,7 @@ export function CodeInput({ length }: CodeInputProps) {
   };
 
   return (
-    <div className="flex justify-center gap-2 rtl:space-x-reverse">
+    <div className="flex justify-center gap-4 rtl:space-x-reverse">
       {values.map((val, idx) => (
         <input
           key={idx}
