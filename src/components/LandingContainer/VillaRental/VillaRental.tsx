@@ -8,21 +8,41 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import * as React from "react";
-import { Destination } from "@/types/Landing/Destination";
+// import { Destination } from "@/types/Landing/Destination";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
+import { getLocation } from "@/utils/services/api/Landing/VillaRental/Location";
 
-const destinations: Destination[] = [
-  { id: 1, name: "ساری", imageUrl: "/savadkooh.svg", count: 50 },
-  { id: 2, name: "تهران", imageUrl: "/savadkooh.svg", count: 50 },
-  { id: 3, name: "سوادکوه", imageUrl: "/savadkooh.svg", count: 50 },
-  { id: 4, name: "ساری", imageUrl: "/savadkooh.svg", count: 50 },
-  { id: 5, name: "تهران", imageUrl: "/savadkooh.svg", count: 50 },
-  { id: 6, name: "سوادکوه", imageUrl: "/savadkooh.svg", count: 50 },
-];
+interface Destination {
+  id: string;
+  area_name: string;
+}
 
 const VillaRental = () => {
+  const [destinations, setDestinations] = useState<Destination[]>([]);
+
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      try {
+        const response = await getLocation();
+        if (Array.isArray(response)) {
+          const data = response.map((item) => ({
+            id: item.id,
+            area_name: item.area_name,
+          }));
+          setDestinations(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch destinations:", error);
+      }
+    };
+
+    fetchDestinations();
+  }, []);
+
+
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
@@ -51,8 +71,8 @@ const VillaRental = () => {
                   }}
                 >
                   <Image
-                    src={dest.imageUrl}
-                    alt={dest.name}
+                    src="/savadkooh.svg"
+                    alt={dest.area_name}
                     width={400}
                     height={160}
                     className="rounded-lg w-full h-auto object-cover"
@@ -70,10 +90,10 @@ const VillaRental = () => {
                 dir="rtl"
                 className="text-center text-sm  font-semibold text-[#848484]"
               >
-                ({dest.count} مورد)
+              50 مورد
               </div>
               <div className="text-center text-base font-semibold text-[#1E1E1E]">
-                {dest.name}
+                {dest.area_name}
               </div>
             </div>
           </div>
@@ -110,8 +130,8 @@ const VillaRental = () => {
                         }}
                       >
                         <Image
-                          src={dest.imageUrl}
-                          alt={dest.name}
+                    src="/savadkooh.svg"
+                    alt={dest.area_name}
                           width={400}
                           height={160}
                           className="rounded-lg w-full h-auto object-cover"
@@ -126,10 +146,10 @@ const VillaRental = () => {
                   </div>
                   <div className="flex flex-row mb-3 justify-between mx-6">
                     <div className="text-center text-sm  font-semibold text-[#848484]">
-                      ({dest.count} مورد)
+                      50 مورد
                     </div>
                     <div className="text-center text-base font-semibold text-[#1E1E1E]">
-                      {dest.name}
+                      {dest.area_name}
                     </div>
                   </div>
                 </div>
