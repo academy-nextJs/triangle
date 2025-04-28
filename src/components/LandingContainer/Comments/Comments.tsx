@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { LuArrowLeft } from "react-icons/lu";
 import { LuArrowRight } from 'react-icons/lu';
 
+
 const testimonials = [
   {
     text:'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ...',
