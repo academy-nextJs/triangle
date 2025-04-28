@@ -11,7 +11,6 @@ import Image from "next/image";
 import * as React from "react";
 import { Destination } from "@/types/Landing/Destination";
 import Autoplay from "embla-carousel-autoplay";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 const destinations: Destination[] = [
@@ -34,7 +33,6 @@ const VillaRental = () => {
         اجاره ویلا در <br /> محبوب‌ترین مقاصد این ماه
       </h2>
 
-      {/* گرید برای سایز مدیوم به بالا */}
       <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {destinations.map((dest) => (
           <div
@@ -82,7 +80,6 @@ const VillaRental = () => {
         ))}
       </div>
 
-      {/* اسلایدر برای سایز کوچیک‌تر از md */}
       <div className="block md:hidden">
         <Carousel
           opts={{
