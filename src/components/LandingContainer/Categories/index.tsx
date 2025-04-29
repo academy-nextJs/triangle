@@ -1,10 +1,4 @@
 import Image from "next/image";
-import estakhrdar from "/public/estakhrdar.png"
-import aparteman from "/public/aparteman.png"
-import bomgardi from "/public/bomgardi.png"
-import colbeei from "/public/colbeei.png"
-import saheli from "/public/saheli.png"
-import vilaei from "/public/vilaei.png"
 const categories = [
     { title: "استخر دار", image: "/estakhrdar.png" },
     { title: "ساحلی", image: "/saheli.png" },
@@ -22,7 +16,7 @@ export default function CategoryGrid() {
         {categories.map((cat, idx) => (
           <div
             key={idx}
-            className="relative h-[160px] rounded-3xl overflow-hidden shadow-lg group"
+            className="relative h-[189px] w-[389px] rounded-3xl overflow-hidden shadow-lg group"
           >
             <Image
               src={cat.image}
