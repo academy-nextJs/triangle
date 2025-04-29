@@ -1,17 +1,36 @@
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TbMap2 } from "react-icons/tb";
-import { IoBedOutline } from "react-icons/io5";
-import { LiaBathSolid } from "react-icons/lia";
-import { MdPeople } from "react-icons/md";
 
-import apte from "../../../../public/ape.png";
+import { BathIcon, BedIcon, Clock, UsersIcon } from "lucide-react";
+import CountdownTimer from "@/components/ui/CountdownTimer";
+
 import Image from "next/image";
-import React from "react";
-import { BathIcon, BedIcon, UsersIcon } from "lucide-react";
+import apte from "../../../../public/ape.png";
 
 const Takhfifat = () => {
   return (
     <div className="container mx-auto p-4">
+      {/* هدر بالا */}
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
+        <Button
+          variant="default"
+          className="rounded-2xl bg-[#586CFF] w-[124px] h-[48px] mt-4 sm:mt-0 text-[16px] "
+        >
+          مشاهده همه
+        </Button>
+        <div className="flex items-center gap-3 flex-wrap">
+          <CountdownTimer targetDate={new Date(Date.now() + 1 * 30 * 90 * 900)} />
+
+
+          <span className="bg-rose-500 text-white  rounded-xl rotate-[-15deg] px-3 pb-1.5 text-[28px] font-bold">
+            بهاره
+          </span>
+
+          <h2 className="text-[28px] font-bold pb-7 text-slate-800">تخفیفات ویژه</h2>
+        </div>
+
+      </div>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         {[1, 2, 3].map((item, index) => (
           <div key={index}>
@@ -27,8 +46,10 @@ const Takhfifat = () => {
               </div>
               <div className=" flex flex-col justify-between h-[calc(438px-221px)] mr-4 text-right">
                 <div>
-                  <h3 className="font-semibold text-[20px] text-gray-800 mb-3 
-                  ">
+                  <h3
+                    className="font-semibold text-[20px] text-gray-800 mb-3 
+                  "
+                  >
                     آپارتمان لوکس زعفرانیه
                   </h3>
                   <div className="flex flex-col items-end">
