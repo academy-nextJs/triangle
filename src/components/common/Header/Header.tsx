@@ -10,7 +10,7 @@ export default function Header() {
           className="w-[129px] h-[49px] mt-[14px] rounded-2xl bg-[#586CFF]"
           asChild
         >
-          <Link href="/login">ثبت نام و ورود</Link>
+          <Link href="/Login">ثبت نام و ورود</Link>
         </Button>
       </div>
       <div className="w-[228px] h-[21px] flex">

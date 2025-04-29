@@ -1,38 +1,164 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { format } from "date-fns";
+import { LucideArrowLeft } from "lucide-react";
+import { RxCalendar } from "react-icons/rx";
+import epartman from "../../../../public/eparteman.png"
 import Link from "next/link";
-import { LuArrowLeft } from "react-icons/lu";
+import { useState } from "react";
+import Image from "next/image";
 
 const HeroSection = () => {
+  const [activeTab, setActiveTab] = useState("رزرو ملک");
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
+  const [destination, setDestination] = useState<string>("");
+
+  const tabs = ["خرید و فروش","رهن و اجاره",  "رزرو ملک" ];
+  const destinations = ["تهران", "مشهد", "اصفهان", "شیراز", "تبریز"];
+
   return (
     <div className="flex  items-center justify-around flex-wrap mt-9">
-      <div className="w-[457px] h-[594px] bg-blue-800 "></div>
-      <div className="flax ">
-        <div className="w-[418px] h-[104px]">
-          <span className="font-bold text-4xl text-right">
-            {" "}
-            راحت ترین راه برای پیدا کردن خونه مورد علاقت
-          </span>
+      <div className="w-[457px] h-[594px] "> 
+        <Image
+        className=" rounded-4xl"
+          src={epartman} alt={""}        
+        />
+      </div>
+      <div className=" w-[1264px] h-[135px] absolute top-[50%]">
+        <div className="flex flex-col items-center w-full">
+          <div className="w-[1264px] h-[135px] bg-white rounded-2xl shadow-md pl-6 flex flex-col gap-6">
+
+            {/* Tabs */}
+            <div className="flex gap-4 justify-end pt-[1px] pr-8">
+              {tabs.map((tab) => (
+                <div key={tab} className="flex flex-col items-center ">
+                  <div className={`h-1.5 w-full rounded-b-lg  ${activeTab === tab ? "bg-blue-600" : "bg-transparent"} transition-all`} />
+                  <button
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-4 py-2 text-[16px] font-semibold font-medium bg-white  transition-all ${
+                      activeTab === tab ? "text-blue-600 bg-blue-100" : "text-gray-600 bg-gray-100"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* فیلدهای فرم */}
+            <div className="flex flex-wrap gap-4 items-center">
+
+              {/* دکمه مشاهده نتیجه */}
+              <Button className="h-[48px] px-6 bg-blue-600 text-white hover:bg-blue-700 whitespace-nowrap">
+                مشاهده نتیجه
+              </Button>
+
+              {/* تاریخ خروج */}
+              <div className="flex items-center gap-2 relative">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400"
+                    >
+                      <RxCalendar  className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <span className="text-[14px]">
+                        {endDate ? format(endDate, "yyyy/MM/dd") : "انتخاب تاریخ"}
+                      </span>
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={endDate}
+                      onSelect={setEndDate}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+                <label className="text-gray-700 text-[14px] font-medium min-w-max">:تاریخ خروج</label>
+              </div>
+
+              {/* تاریخ ورود */}
+              <div className="flex items-center gap-2 relative">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400"
+                    >
+                      <RxCalendar  className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <span className="text-[14px] text-right">
+                        {startDate ? format(startDate, "yyyy/MM/dd") : "انتخاب تاریخ"}
+                      </span>
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={startDate}
+                      onSelect={setStartDate}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+                <label className="text-gray-700 text-[14px] font-medium min-w-max">:تاریخ ورود</label>
+              </div>
+
+              {/* تعداد نفرات */}
+              <div className="flex items-center gap-2">
+                <Input placeholder="تعداد" className="w-[162px] h-[48px]" />
+                <label className="text-gray-700 text-[14px] font-medium min-w-max">:تعداد نفرات</label>
+              </div>
+
+              {/* انتخاب مقصد */}
+              <div className="flex items-center gap-2">
+                <Select onValueChange={(value) => setDestination(value)}>
+                  <SelectTrigger className="w-[162px] h-[48px]">
+                    <SelectValue placeholder="مقصد" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {destinations.map((city) => (
+                      <SelectItem key={city} value={city}>
+                        {city}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <label className="text-gray-700 text-[14px] font-medium min-w-max">:انتخاب مقصد</label>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="w-[418px] h-[104px]">
+      </div>
+
+      <div className="flax justify-items-end">
+        <div className="w-[418px] h-[106px] gap-2">
+          <p className="font-bold text-4xl text-right ">
+            راحت ترین راه برای پیدا کردن خونه مورد علاقت
+          </p>
+        </div>
+        <div className="w-[418px] h-[106px] gap-3">
           <p className="font-semibold text-[#727272] text-right">
-            {" "}
             رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب خوردن
             فقط در پیزا
           </p>
         </div>
-        <div className="w-[418px] h-[104px]">
+        <div className="w-[160px] h-[106px] mb-52">
           <Button
             className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
             asChild
           >
             <Link href="/login">
-              {" "}ss
-              <LuArrowLeft /> رهن و اجاره ملک
+              <LucideArrowLeft /> رهن و اجاره ملک
             </Link>
           </Button>
-        </div>
-        <div className=" z-20 w-[] h-[135px] bg-amber-400">
-          
         </div>
       </div>
     </div>
