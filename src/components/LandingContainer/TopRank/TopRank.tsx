@@ -36,7 +36,7 @@ const TopRank = () => {
           animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="inline-flex items-center justify-center w-10 h-10 rounded-full text-xl border-2 border-yellow-400"
-        >
+        > 
           <Image
             src="/star.svg"
             alt="رتبه"
