@@ -4,7 +4,7 @@ import Link from "next/link";
 // src/app/components/Header.tsx
 export default function Header() {
   return (
-    <div className="flex items-center justify-around flex-wrap">
+    <div className="flex items-center justify-center gap-80 flex-wrap   max-w-7xl mx-auto">
       <div className="flex ">
         <Button
           className="w-[129px] h-[49px] mt-[14px] rounded-2xl bg-[#586CFF]"
