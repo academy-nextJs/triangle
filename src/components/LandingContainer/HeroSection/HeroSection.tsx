@@ -23,7 +23,7 @@ const HeroSection = () => {
   const destinations = ["تهران", "مشهد", "اصفهان", "شیراز", "تبریز"];
 
   return (
-    <div className="flex  items-center justify-around flex-wrap mt-9">
+    <div className="flex  items-center justify-around  flex-wrap mt-9">
       <div className="w-[457px] h-[594px] "> 
         <Image
         className=" rounded-4xl"
@@ -41,7 +41,7 @@ const HeroSection = () => {
                   <div className={`h-1.5 w-full rounded-b-lg  ${activeTab === tab ? "bg-blue-600" : "bg-transparent"} transition-all`} />
                   <button
                     onClick={() => setActiveTab(tab)}
-                    className={`px-4 py-2 text-[16px] font-semibold font-medium bg-white  transition-all ${
+                    className={`px-4 py-2 text-[16px]  font-medium bg-white  transition-all ${
                       activeTab === tab ? "text-blue-600 bg-blue-100" : "text-gray-600 bg-gray-100"
                     }`}
                   >

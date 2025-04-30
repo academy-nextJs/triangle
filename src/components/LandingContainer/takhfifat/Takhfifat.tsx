@@ -10,7 +10,7 @@ import apte from "../../../../public/ape.png";
 
 const Takhfifat = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto max-w-7xl p-4">
       {/* هدر بالا */}
       <div className="flex flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
         <Button

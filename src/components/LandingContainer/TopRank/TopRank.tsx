@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const TopRank = () => {
   return (
-<div className="flex flex-col  min-[1009px]:flex-row items-center justify-center gap-8 px-4 py-12 max-w-7xl   mx-auto">
+<div className="flex flex-col  min-[1009px]:flex-row items-center justify-center gap-8 px-4 py-12 max-w-7xl mt-8  mx-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -47,7 +47,7 @@ const TopRank = () => {
           />
         </motion.div>
 
-        <h2 className="text-3xl md:text-2xl font-bold leading-tight">
+        <h2 className="text-3xl md:text-2xl font-bold leading-tight font-[IranYekanExtraBold]">
           رتبه برتر در بین وبسایت‌های <br />
           رزرو و اجاره ایران
         </h2>

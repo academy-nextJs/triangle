@@ -9,7 +9,7 @@ import SelandBoy from './SeelandBay'
 
 const LandingContainer = () => {
   return (
-    <div className='' >
+    <div className=' ' >
       <HeroSection/>
       <Takhfifat/>
       <CategoryGrid/>

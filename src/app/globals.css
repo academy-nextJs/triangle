@@ -15,6 +15,72 @@
   --foreground: #171717;
 } */
 
+@font-face {
+  font-family: "IranYekanBlack";
+  src: url("../assets/Fonts/iranyekanwebblack.ttf");
+}
+
+.BlackFont {
+  font-family: "IranYekanBlack";
+}
+@font-face {
+  font-family: "IranYekanBold";
+  src: url("../assets/Fonts/iranyekanwebbold.ttf");
+}
+
+.BoldFont {
+  font-family: "IranYekanBold";
+}
+@font-face {
+  font-family: "IranYekanExtraBlack";
+  src: url("../assets/Fonts/iranyekanwebextrablack.ttf");
+}
+
+.ExtraBlackFont {
+  font-family: "IranYekanExtraBlack";
+}
+
+@font-face {
+  font-family: "IranYekanExtraBold";
+  src: url("../assets/fonts/iranyekanwebextrabold.ttf");
+}
+
+.ExtraBoldFont {
+  font-family: "IranYekanExtraBold";
+}
+@font-face {
+  font-family: "IranYekanLight";
+  src: url("../assets/fonts/iranyekanweblight.ttf");
+}
+
+.LightFont {
+  font-family: "IranYekanLight";
+}
+@font-face {
+  font-family: "IranYekanRegular";
+  src: url("../assets/fonts/iranyekanwebregular.ttf");
+}
+
+.RegularFont {
+  font-family: "IranYekanRegular";
+}
+@font-face {
+  font-family: "IranYekanMedium";
+  src: url("../assets/fonts/iranyekanwebmedium.ttf");
+}
+
+.SemiBoldFont {
+  font-family: "IranYekanMedium";
+}
+@font-face {
+  font-family: "IranYekanThin";
+  src: url("../assets/fonts/iranyekanwebthin.ttf");
+}
+
+.ThinFont {
+  font-family: "IranYekanThin";
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
