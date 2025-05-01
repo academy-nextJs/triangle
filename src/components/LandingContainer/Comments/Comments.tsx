@@ -81,7 +81,7 @@ export default function Testimonials() {
 
   return (
     <div dir="rtl" className="px-4 md:px-8 py-12 flex flex-col items-center justify-center mt-8">
-      <div className="w-full max-w-7xl mr-10 mb-8">
+      <div className="w-full max-w-7xl  mb-8">
         <h2 className="text-right text-3xl font-bold">نظرات کاربران پیزا</h2>
       </div>
 

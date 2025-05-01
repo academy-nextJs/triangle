@@ -12,6 +12,7 @@ import epartman from "../../../../public/eparteman.png"
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { BlurFade } from "@/components/magicui/BlurFade";
 
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState("رزرو ملک");
@@ -25,16 +26,18 @@ const HeroSection = () => {
   return (
     <div className="flex  items-center justify-around  flex-wrap mt-9">
       <div className="w-[457px] h-[594px] "> 
+      <BlurFade delay={0.30} inView>
         <Image
         className=" rounded-4xl"
           src={epartman} alt={""}        
         />
+         </BlurFade>
       </div>
-      <div className=" w-[1264px] h-[135px] absolute top-[50%]">
+      {/* <div className=" w-[1264px] h-[135px] absolute top-[50%]">
         <div className="flex flex-col items-center w-full">
           <div className="w-[1264px] h-[135px] bg-white rounded-2xl shadow-md pl-6 flex flex-col gap-6">
 
-            {/* Tabs */}
+            Tabs
             <div className="flex gap-4 justify-end pt-[1px] pr-8">
               {tabs.map((tab) => (
                 <div key={tab} className="flex flex-col items-center ">
@@ -51,15 +54,15 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* فیلدهای فرم */}
+            //  فیلدهای فرم 
             <div className="flex flex-wrap gap-4 items-center">
 
-              {/* دکمه مشاهده نتیجه */}
+              // دکمه مشاهده نتیجه
               <Button className="h-[48px] px-6 bg-blue-600 text-white hover:bg-blue-700 whitespace-nowrap">
                 مشاهده نتیجه
               </Button>
 
-              {/* تاریخ خروج */}
+              //  تاریخ خروج 
               <div className="flex items-center gap-2 relative">
                 <Popover>
                   <PopoverTrigger asChild>
@@ -85,7 +88,7 @@ const HeroSection = () => {
                 <label className="text-gray-700 text-[14px] font-medium min-w-max">:تاریخ خروج</label>
               </div>
 
-              {/* تاریخ ورود */}
+              //  تاریخ ورود 
               <div className="flex items-center gap-2 relative">
                 <Popover>
                   <PopoverTrigger asChild>
@@ -111,13 +114,13 @@ const HeroSection = () => {
                 <label className="text-gray-700 text-[14px] font-medium min-w-max">:تاریخ ورود</label>
               </div>
 
-              {/* تعداد نفرات */}
+              //  تعداد نفرات 
               <div className="flex items-center gap-2">
                 <Input placeholder="تعداد" className="w-[162px] h-[48px]" />
                 <label className="text-gray-700 text-[14px] font-medium min-w-max">:تعداد نفرات</label>
               </div>
 
-              {/* انتخاب مقصد */}
+              //  انتخاب مقصد 
               <div className="flex items-center gap-2">
                 <Select onValueChange={(value) => setDestination(value)}>
                   <SelectTrigger className="w-[162px] h-[48px]">
@@ -136,21 +139,28 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="flax justify-items-end">
         <div className="w-[418px] h-[106px] gap-2">
+      
+      
+      <BlurFade delay={0.30} inView>
           <p className="font-bold text-4xl text-right ">
             راحت ترین راه برای پیدا کردن خونه مورد علاقت
           </p>
+          </BlurFade>
         </div>
         <div className="w-[418px] h-[106px] gap-3">
+        <BlurFade delay={0.30 * 2} inView>
           <p className="font-semibold text-[#727272] text-right">
             رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب خوردن
             فقط در پیزا
           </p>
+          </BlurFade>
         </div>
         <div className="w-[160px] h-[106px] mb-52">
+        <BlurFade delay={0.30 * 3} inView>
           <Button
             className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
             asChild
@@ -159,6 +169,7 @@ const HeroSection = () => {
               <LucideArrowLeft /> رهن و اجاره ملک
             </Link>
           </Button>
+          </BlurFade>
         </div>
       </div>
     </div>

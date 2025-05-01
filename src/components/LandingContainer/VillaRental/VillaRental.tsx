@@ -49,7 +49,7 @@ const VillaRental = () => {
 
   return (
     <div className="px-4 py-6 max-w-7xl mx-auto ">
-      <h2 className="text-right text-3xl font-bold md:text-2xl  mb-6">
+      <h2 className="text-right text-3xl font-bold md:text-2xl  mb-6 font-[IranYekanMedium]">
         اجاره ویلا در <br /> محبوب‌ترین مقاصد این ماه
       </h2>
 

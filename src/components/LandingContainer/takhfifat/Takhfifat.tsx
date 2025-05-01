@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TbMap2 } from "react-icons/tb";
@@ -15,11 +17,11 @@ const Takhfifat = () => {
       <div className="flex flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
         <Button
           variant="default"
-          className="rounded-2xl bg-[#586CFF] w-[124px] h-[48px] mt-4 sm:mt-0 text-[16px] "
+          className="rounded-2xl bg-[#586CFF] sm:w-[124px] w-[100%] h-[48px] mt-4 sm:mt-0 text-[16px] "
         >
           مشاهده همه
         </Button>
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-3 ">
           <CountdownTimer targetDate={new Date(Date.now() + 1 * 30 * 90 * 900)} />
 
 
@@ -31,7 +33,7 @@ const Takhfifat = () => {
         </div>
 
       </div>
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {[1, 2, 3].map((item, index) => (
           <div key={index}>
             <Card className="bg-white shadow-lg rounded-[40px] w-[391px] h-[448px] overflow-hidden">
