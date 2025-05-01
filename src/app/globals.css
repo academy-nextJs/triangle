@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "IranYekanBlack";
-  src: url("../assets/Fonts/iranyekanwebblack.ttf");
+  src: url("../assets/Fonts/IRANYekanX-Black.woff");
 }
 
 .BlackFont {
@@ -25,7 +25,7 @@
 }
 @font-face {
   font-family: "IranYekanBold";
-  src: url("../assets/Fonts/iranyekanwebbold.ttf");
+  src: url("../assets/Fonts/IRANYekanX-Bold.woff");
 }
 
 .BoldFont {
@@ -33,7 +33,7 @@
 }
 @font-face {
   font-family: "IranYekanExtraBlack";
-  src: url("../assets/Fonts/iranyekanwebextrablack.ttf");
+  src: url("../assets/Fonts/IRANYekanX-ExtraBlack.woff");
 }
 
 .ExtraBlackFont {
@@ -42,23 +42,23 @@
 
 @font-face {
   font-family: "IranYekanExtraBold";
-  src: url("../assets/fonts/iranyekanwebextrabold.ttf");
+  src: url("../assets/fonts/IRANYekanX-ExtraBold.woff");
 }
 
 .ExtraBoldFont {
   font-family: "IranYekanExtraBold";
 }
 @font-face {
-  font-family: "IranYekanLight";
-  src: url("../assets/fonts/iranyekanweblight.ttf");
+  font-family: "IranYekanHeavy";
+  src: url("../assets/fonts/IRANYekanX-Heavy.woff");
 }
 
 .LightFont {
-  font-family: "IranYekanLight";
+  font-family: "IranYekanHeavy";
 }
 @font-face {
   font-family: "IranYekanRegular";
-  src: url("../assets/fonts/iranyekanwebregular.ttf");
+  src: url("../assets/fonts/IRANYekanX-Regular.woff");
 }
 
 .RegularFont {
@@ -66,7 +66,7 @@
 }
 @font-face {
   font-family: "IranYekanMedium";
-  src: url("../assets/fonts/iranyekanwebmedium.ttf");
+  src: url("../assets/fonts/IRANYekanX-Medium.woff");
 }
 
 .SemiBoldFont {
@@ -74,7 +74,7 @@
 }
 @font-face {
   font-family: "IranYekanThin";
-  src: url("../assets/fonts/iranyekanwebthin.ttf");
+  src: url("../assets/fonts/IRANYekanX-Thin.woff");
 }
 
 .ThinFont {
