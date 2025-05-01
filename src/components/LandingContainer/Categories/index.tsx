@@ -10,9 +10,9 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <div className="container mx-auto max-w-7xl pt-20 px-4 ">
+    <div className=" grid justify-center pt-20 px-4 ">
       <h2 className="text-2xl font-bold text-right mb-6">دسته بندی ها</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid   lg:grid-cols-2 xl:grid-cols-3  gap-4">
         {categories.map((cat, idx) => (
           <div
             key={idx}
