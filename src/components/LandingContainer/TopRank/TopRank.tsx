@@ -47,14 +47,14 @@ const TopRank = () => {
           />
         </motion.div>
 
-        <h2 className="text-3xl md:text-2xl font-bold leading-tight font-[IranYekanExtraBold]">
+        <h2 className="text-3xl md:text-2xl font-bold leading-tight font-[IranYekanMedium]">
           رتبه برتر در بین وبسایت‌های <br />
           رزرو و اجاره ایران
         </h2>
 
         <p
           dir="rtl"
-          className="text-sm md:text-base text-justify mt-7 font-normal text-[#2C2C2C] transition-transform hover:scale-105  duration-300"
+          className="text-sm md:text-base text-justify mt-7 font-normal font-[IranYekanRegular] text-[#2C2C2C] transition-transform hover:scale-105  duration-300"
         >
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
