@@ -1,19 +1,54 @@
 "use client";
 
+import TakhfifatCard from "@/components/common/TakhfifatCard/TakhfifatCard";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { TbMap2 } from "react-icons/tb";
+// import { Card } from "@/components/ui/card";
+// import { TbMap2 } from "react-icons/tb";
 
-import { BathIcon, BedIcon, Clock, UsersIcon } from "lucide-react";
+// import { BathIcon, BedIcon, Clock, UsersIcon } from "lucide-react";
 import CountdownTimer from "@/components/ui/CountdownTimer";
 
-import Image from "next/image";
-import apte from "../../../../public/ape.png";
+// import Image from "next/image";
+// import apte from "../../../../public/ape.png";
+
+
+const staticCards = [
+  {
+    title: "آپارتمان لوکس زعفرانیه",
+    location: "تهران : زعفرانیه",
+    bedCount: 2,
+    bathCount: 2,
+    capacity: 4,
+    price: "۱,۵۰۰,۰۰۰ تومان",
+    oldPrice: "۱,۸۰۰,۰۰۰ تومان",
+    discount: "۱۵",
+  },
+  {
+    title: "سوئیت دریاچه چیتگر",
+    location: "تهران : چیتگر",
+    bedCount: 1,
+    bathCount: 1,
+    capacity: 2,
+    price: "۹۰۰,۰۰۰ تومان",
+    oldPrice: "۱,۲۰۰,۰۰۰ تومان",
+    discount: "۲۵",
+  },
+  {
+    title: "سوئیت دریاچه چیتگر",
+    location: "تهران : چیتگر",
+    bedCount: 1,
+    bathCount: 1,
+    capacity: 2,
+    price: "۹۰۰,۰۰۰ تومان",
+    oldPrice: "۱,۲۰۰,۰۰۰ تومان",
+    discount: "۲۵",
+  },
+];
+
 
 const Takhfifat = () => {
   return (
     <div className="container mx-auto max-w-7xl p-4">
-      {/* هدر بالا */}
       <div className="flex flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
         <Button
           variant="default"
@@ -34,7 +69,11 @@ const Takhfifat = () => {
 
       </div>
       <div className="flex flex-wrap justify-center gap-4">
-        {[1, 2, 3].map((item, index) => (
+
+        {staticCards.map((item,i) =>(
+          <TakhfifatCard key={i} {...item}/>
+        ))}
+        {/* {[1, 2, 3].map((item, index) => (
           <div key={index}>
             <Card className="bg-white shadow-lg rounded-[40px] w-[391px] h-[448px] overflow-hidden">
               <div className="flex justify-center items-center w-full h-[221px] ">
@@ -61,7 +100,6 @@ const Takhfifat = () => {
                       </span>
                       <TbMap2 className="text-gray-500 w-[24px] h-[24px]" />
                     </div>
-                    {/* خط زیر متن */}
                     <div className="w-[360px] h-px bg-gray-100" />
                   </div>
                 </div>
@@ -111,7 +149,7 @@ const Takhfifat = () => {
               </div>
             </Card>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
