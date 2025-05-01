@@ -4,13 +4,13 @@ import Link from "next/link";
 // src/app/components/Header.tsx
 export default function Header() {
   return (
-    <div className="flex items-center justify-around flex-wrap">
+    <div className="flex items-center justify-center gap-80 flex-wrap   max-w-7xl mx-auto">
       <div className="flex ">
         <Button
           className="w-[129px] h-[49px] mt-[14px] rounded-2xl bg-[#586CFF]"
           asChild
         >
-          <Link href="/login">ثبت نام و ورود</Link>
+          <Link href="/Login">ثبت نام و ورود</Link>
         </Button>
       </div>
       <div className="w-[228px] h-[21px] flex">

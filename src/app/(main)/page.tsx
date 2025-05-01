@@ -2,8 +2,8 @@ import LandingContainer from '@/components/LandingContainer';
 
 export default function HomePage() {
   return (
-    <main>
+    <div className='flex justify-center  px-4 '>
       <LandingContainer/>
-    </main>
+    </div>
   );
-}
+} 
