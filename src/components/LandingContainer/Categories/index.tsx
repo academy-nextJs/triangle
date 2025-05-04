@@ -24,12 +24,12 @@ export const CategoryGrid = () => {
   //   fetch("https://delta-project.liara.run/categories")
   //     .then(res => res.json())
   //     .then(setData)
-      
+
   //   }, [])
-    
+
   //   console.log(data,"sss");
 
- const [destinations, setDestinations] = useState<categories[]>([]);
+  const [destinations, setDestinations] = useState<categories[]>([]);
 
   useEffect(() => {
     const fetchDestinations = async () => {
@@ -38,7 +38,7 @@ export const CategoryGrid = () => {
         if (Array.isArray(response)) {
           const data = response.map((item) => ({
             id: item.id,
-            area_name: item.area_name,
+            name: item.name,
           }));
           setDestinations(data);
         }
@@ -46,27 +46,28 @@ export const CategoryGrid = () => {
         console.error("Failed to fetch destinations:", error);
       }
     };
-
+    
+    
     fetchDestinations();
   }, []);
-  
+
   return (
     <div className=" grid justify-center pt-20 px-4 ">
       <h2 className="text-2xl font-bold text-right mb-6">دسته بندی ها</h2>
       <div className="grid   lg:grid-cols-2 xl:grid-cols-3  gap-4">
-        {destinations.map((dest) => (
+        {destinations.map((data) => (
           <div
-            key={1}
+            key={data.id}
             className="relative h-[189px] w-[389px] rounded-3xl overflow-hidden shadow-lg group"
           >
             <Image
-              src={dest.name}
-              alt={dest.name}
+              src={""}
+              alt={data.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute bottom-4 right-4 bg-black/50 text-white text-lg font-bold px-3 py-1 rounded-xl">
-              {dest.name}
+              {data.name}
             </div>
           </div>
         ))}
