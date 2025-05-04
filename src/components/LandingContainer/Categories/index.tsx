@@ -1,35 +1,76 @@
+"use client";
+import { getcategories } from "@/utils/services/api/Landing/Categori/Categori";
+// import { getcategories } from "@/utils/services/api/Landing/Categori/Categori";
+import { da } from "date-fns/locale";
 import Image from "next/image";
-const categories = [
-    { title: "استخر دار", image: "/estakhrdar.png" },
-    { title: "ساحلی", image: "/saheli.png" },
-    { title: "آپارتمانی", image: "/aparteman.png" },
-    { title: "ویلا یی", image: "/vilaei.png" },
-    { title: "بومگردی", image: "/bomgardi.png" },
-    { title: "کلبه ای", image: "/colbeei.png" },
-];
+import { useEffect, useState } from "react";
+export interface categories {
+  id: string;
+  name: string;
+}
+// const categories = [
+//   { id: "1", title: "استخر دار", image: "/estakhrdar.png" },
+//   { id: "2", title: "ساحلی", image: "/saheli.png" },
+//   { id: "3", title: "آپارتمانی", image: "/aparteman.png" },
+//   { id: "4", title: "ویلا یی", image: "/vilaei.png" },
+//   { id: "5", title: "بومگردی", image: "/bomgardi.png" },
+//   { id: "6", title: "کلبه ای", image: "/colbeei.png" },
+// ];
 
-export default function CategoryGrid() {
+export const CategoryGrid = () => {
+  // const [data, setData] = useState([])
+
+  // useEffect(() => {
+  //   fetch("https://delta-project.liara.run/categories")
+  //     .then(res => res.json())
+  //     .then(setData)
+      
+  //   }, [])
+    
+  //   console.log(data,"sss");
+
+ const [destinations, setDestinations] = useState<categories[]>([]);
+
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      try {
+        const response = await getcategories();
+        if (Array.isArray(response)) {
+          const data = response.map((item) => ({
+            id: item.id,
+            area_name: item.area_name,
+          }));
+          setDestinations(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch destinations:", error);
+      }
+    };
+
+    fetchDestinations();
+  }, []);
+  
   return (
     <div className=" grid justify-center pt-20 px-4 ">
       <h2 className="text-2xl font-bold text-right mb-6">دسته بندی ها</h2>
       <div className="grid   lg:grid-cols-2 xl:grid-cols-3  gap-4">
-        {categories.map((cat, idx) => (
+        {destinations.map((dest) => (
           <div
-            key={idx}
+            key={1}
             className="relative h-[189px] w-[389px] rounded-3xl overflow-hidden shadow-lg group"
           >
             <Image
-              src={cat.image}
-              alt={cat.title}
+              src={dest.name}
+              alt={dest.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute bottom-4 right-4 bg-black/50 text-white text-lg font-bold px-3 py-1 rounded-xl">
-              {cat.title}
+              {dest.name}
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};

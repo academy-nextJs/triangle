@@ -4,7 +4,7 @@ import TopRank from './TopRank/TopRank'
 import VillaRental from './VillaRental/VillaRental'
 import Comments from './Comments/Comments'
 import Takhfifat from './takhfifat/Takhfifat'
-import CategoryGrid from './Categories'
+import {CategoryGrid} from './Categories'
 import SelandBoy from './SeelandBay'
 
 const LandingContainer = () => {
