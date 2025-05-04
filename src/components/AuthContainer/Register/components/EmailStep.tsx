@@ -2,21 +2,49 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import httpClient from "@/utils/services/interceptor/httpClient";
+import Link from "next/link";
 
 interface EmailStepProps {
+  email: string;
+  setEmail: (email: string) => void;
+  setTempUserId: (tempUserId: string) => void;
+  setError: (error: string) => void;
   onNext: () => void;
 }
 
-export function EmailStep({ onNext }: EmailStepProps) {
+export function EmailStep({
+  email,
+  setEmail,
+  setTempUserId,
+  setError,
+  onNext,
+}: EmailStepProps) {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await httpClient.post("/auth/start-registration", { email });
+      if (res.data.tempUserId) {
+        setTempUserId(res.data.tempUserId);
+        setError("");
+        onNext();
+      } else {
+        setError("خطا در ارسال کد تأیید");
+      }
+    } catch (error: any) {
+      setError(error.response?.data?.message || "خطا در ارسال کد تأیید");
+    }
+  };
+
   return (
-    <div className="flex flex-col w-4/5  gap-4 space-y-6 px-16">
-      <p className=" text-gray-600 pt-4">
-        برای ثبت نام در آلفا میتوانید با اکانت گوگل خود و یا با ارسال کد تایید
+    <div className="flex flex-col w-4/5 gap-4 space-y-6 px-16">
+      <p className="text-gray-600 pt-4">
+        برای ثبت نام در آلفا می‌توانید با اکانت گوگل خود و یا با ارسال کد تأیید
         به ایمیل خود اقدام کنید
       </p>
 
       <div className="flex flex-col font-bold gap-2">
-        <Button variant="outline" className="w-full rounded-2xl">
+        <Button variant="outline" className="w-full rounded-2xl" disabled>
           <svg
             width="24"
             height="24"
@@ -50,25 +78,30 @@ export function EmailStep({ onNext }: EmailStepProps) {
           <hr className="flex-grow border-gray-300" />
         </div>
 
-        <div>
-          <h3 className="mb-2">ایمیل</h3>
-          <Input
-            className="h-10 rounded-xl"
-            type="email"
-            placeholder="ایمیل خود را وارد کنید"
-          />
-        </div>
-        <div className="pt-2">
-          <Button onClick={onNext} className="w-full rounded-xl bg-[#586CFF]">
-            ارسال کد تایید
-          </Button>
-          <div className="flex pt-2 justify-center gap-3">
-            <span className="text-sm">حساب کاربری دارید؟</span>
-            <span className="text-sm underline text-blue-500">
-              ورود به حساب
-            </span>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h3 className="mb-2">ایمیل</h3>
+            <Input
+              className="h-10 rounded-xl"
+              type="email"
+              placeholder="ایمیل خود را وارد کنید"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
-        </div>
+          <div className="pt-2">
+            <Button type="submit" className="w-full rounded-xl bg-[#586CFF]">
+              ارسال کد تأیید
+            </Button>
+            <div className="flex pt-2 justify-center gap-3">
+              <span className="text-sm">حساب کاربری دارید؟</span>
+              <Link href="/Login" className="text-sm underline text-blue-500">
+                ورود به حساب
+              </Link>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );
