@@ -1,13 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { LeftSide } from "../Common/LeftSide";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import MailSvg from "@/components/Svg/MailSvg";
 import LockSvg from "@/components/Svg/LockSvg";
+import Link from "next/link";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    const result = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+    if (result?.error) {
+      setError("ایمیل یا رمزعبور اشتباه است");
+      setLoading(false);
+    } else {
+      router.push("/dashboard");
+    }
+  };
+
   return (
     <div
       className="flex min-h-screen items-center justify-center bg-gray-50"
@@ -16,18 +42,18 @@ export default function LoginPage() {
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg bg-white overflow-hidden">
         {/* Right side content */}
         <div className="flex flex-col items-center justify-center w-full p-8 md:w-1/2">
-          <div className="flex w-3/5  flex-col gap-2">
+          <div className="flex w-3/5 flex-col gap-2">
             <h2 className="text-4xl">Piza</h2>
-            <h2 className="text-2xl font-bold ">ورود به پیزا</h2>
+            <h2 className="text-2xl font-bold">ورود به پیزا</h2>
           </div>
-          <div className="flex flex-col w-4/5  gap-4 space-y-6 px-16">
-            <p className=" text-gray-600 pt-4">
+          <div className="flex flex-col w-4/5 gap-4 space-y-6 px-16">
+            <p className="text-gray-600 pt-4">
               برای ورود به حساب کاربری آلفا میتوانید با اکانت گوگل خود و یا با
               ایمیل و رمزعبور خود اقدام کنید
             </p>
 
             <div className="flex flex-col font-bold gap-2">
-              <Button variant="outline" className="w-full  rounded-xl">
+              <Button variant="outline" className="w-full rounded-xl" disabled>
                 <svg
                   width="24"
                   height="24"
@@ -61,39 +87,57 @@ export default function LoginPage() {
                 <hr className="flex-grow border-gray-300" />
               </div>
 
-              <div className="mb-4">
-                <h3 className="mb-2">ایمیل</h3>
-                <div className="relative">
-                  <MailSvg />
-                  <Input
-                    className="h-10 rounded-xl pr-10"
-                    placeholder="ایمیل خود را وارد کنید"
-                  />
-                </div>
-              </div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
 
-              <div>
-                <h3 className="mb-2">رمزعبور</h3>
-                <div className="relative">
-                  <LockSvg />
-                  <Input
-                    className="h-10 rounded-xl pr-10"
-                    type="password"
-                    placeholder="رمز عبور"
-                  />
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div className="mb-4">
+                  <h3 className="mb-2">ایمیل</h3>
+                  <div className="relative">
+                    <MailSvg />
+                    <Input
+                      className="h-10 rounded-xl pr-10"
+                      placeholder="ایمیل خود را وارد کنید"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="pt-2">
-                <Button className="w-full rounded-xl bg-[#586CFF]">
-                  ورود به حساب
-                </Button>
-                <div className="flex pt-2 justify-center gap-3">
-                  <span className="text-sm">حساب کاربری ندارید؟</span>
-                  <span className="text-sm underline text-blue-500">
-                    ثبت نام در پیزا
-                  </span>
+
+                <div>
+                  <h3 className="mb-2">رمزعبور</h3>
+                  <div className="relative">
+                    <LockSvg />
+                    <Input
+                      className="h-10 rounded-xl pr-10"
+                      type="password"
+                      placeholder="رمز عبور"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
+
+                <div className="pt-2">
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-xl bg-[#586CFF]"
+                  >
+                    {loading ? "در حال ورود..." : "ورود به حساب"}
+                  </Button>
+                  <div className="flex pt-2 justify-center gap-3">
+                    <span className="text-sm">حساب کاربری ندارید؟</span>
+                    <Link
+                      href="/Register"
+                      className="text-sm underline text-blue-500"
+                    >
+                      ثبت نام در پیزا
+                    </Link>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
