@@ -41,12 +41,12 @@ export default function LoginPage() {
     >
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-black dark:text-white bg-white overflow-hidden">
         {/* Right side content */}
-        <div className="flex flex-col items-center justify-center w-full p-8 md:w-1/2">
+        <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-3/5 flex-col gap-2">
             <h2 className="text-4xl">Piza</h2>
             <h2 className="text-2xl font-bold">ورود به پیزا</h2>
           </div>
-          <div className="flex flex-col w-4/5 gap-4 space-y-6 px-16">
+          <div className="flex flex-col w-4/5 gap-4 space-y-6 lg:px-16">
             <p className="text-gray-600 dark:text-white pt-4">
               برای ورود به حساب کاربری آلفا میتوانید با اکانت گوگل خود و یا با
               ایمیل و رمزعبور خود اقدام کنید

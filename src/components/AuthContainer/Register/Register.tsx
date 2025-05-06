@@ -21,7 +21,7 @@ export default function RegisterPage() {
     >
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg bg-white overflow-hidden">
         {/* Right side content */}
-        <div className="flex flex-col items-center justify-center w-full p-8 md:w-1/2">
+        <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-3/5 flex-col gap-2">
             <h2 className="text-4xl">Piza</h2>
             <h2 className="text-2xl font-bold">ثبت نام در پیزا</h2>

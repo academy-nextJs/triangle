@@ -70,7 +70,7 @@ export function VerifyStep({
   };
 
   return (
-    <div className="flex flex-col w-4/5 pt-4 gap-4 space-y-6 px-16">
+    <div className="flex flex-col w-4/5 pt-4 gap-4 space-y-6 lg:px-16">
       <div>
         <p className="text-gray-600 text-sm">
           کد تأیید ارسال شده به {email} را وارد کنید.
