@@ -14,7 +14,7 @@ const LeftSide = () => {
           <MapSvg />
           جنگل گلستان
         </div>
-        <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start bg-white text-base font-bold   rounded-2xl">
+        <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start dark:bg-black bg-white text-base font-bold   rounded-2xl">
           <svg
             width="20"
             height="20"

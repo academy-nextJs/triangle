@@ -44,7 +44,7 @@ export function InfoStep({ tempUserId, setError, onComplete }: InfoStepProps) {
   };
 
   return (
-    <div className="flex flex-col w-4/5 pt-4 gap-4 space-y-6 px-16">
+    <div className="flex flex-col w-4/5 pt-4 gap-4 space-y-6 lg:px-16">
       <p className="text-gray-600">مشخصات خواسته شده را پر کنید</p>
       <div>
         <form
