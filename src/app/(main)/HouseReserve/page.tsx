@@ -2,7 +2,7 @@ import TakhfifatCard from "@/components/common/TakhfifatCard/TakhfifatCard";
 import Filter from "@/components/HouseReserveContainer/Filter/Filter";
 import SearchBar from "@/components/HouseReserveContainer/SearchBar/SearchBar";
 import Map from "@/components/HouseReserveContainer/Map/Map";
-
+import { ScrollArea } from "@/components/ui/scroll-area";
 const staticCards = [
   {
     title: "آپارتمان لوکس زعفرانیه",
@@ -14,7 +14,6 @@ const staticCards = [
     oldPrice: "۱,۸۰۰,۰۰۰ تومان",
     discount: "۱۵",
   },
-  // کارت‌های تستی بیشتر
   {
     title: "آپارتمان لوکس زعفرانیه",
     location: "تهران : زعفرانیه",
@@ -59,7 +58,7 @@ const HouseReservePage = () => {
           <SearchBar />
           <Filter />
         </div>
-        <div className="h-[585px] overflow-y-auto pr-1">
+        <ScrollArea className="h-[585px] pr-1 ">
   <div className="flex flex-wrap gap-4 max-[1474px]:flex-col">
     {staticCards.map((card, index) => (
       <div key={index} className="w-[calc(50%-0.5rem)] max-[1474px]:w-full">
@@ -67,7 +66,7 @@ const HouseReservePage = () => {
       </div>
     ))}
   </div>
-</div>
+</ScrollArea>
       </div>
     </div>
   );
