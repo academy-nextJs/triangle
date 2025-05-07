@@ -205,3 +205,10 @@
   }
 }
 
+/* globals.css or app/globals.css */
+html {
+  transition: background-color 1s ease, color 1s ease;
+}
+body {
+  transition: background-color 1s ease, color 1s ease;
+}

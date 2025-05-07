@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import MailSvg from "@/components/Svg/MailSvg";
 import LockSvg from "@/components/Svg/LockSvg";
 import Link from "next/link";
+import PizaSvg from "@/components/Svg/PizaSvg";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -42,8 +43,8 @@ export default function LoginPage() {
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 dark:text-white bg-white overflow-hidden">
         {/* Right side content */}
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
-          <div className="flex w-3/5 flex-col gap-2">
-            <h2 className="text-4xl">Piza</h2>
+          <div className="flex w-4/6 flex-col gap-2">
+            <PizaSvg />
             <h2 className="text-2xl font-bold">ورود به پیزا</h2>
           </div>
           <div className="flex flex-col w-4/5 gap-4 space-y-6 lg:px-16">
@@ -53,7 +54,7 @@ export default function LoginPage() {
             </p>
 
             <div className="flex flex-col  font-bold gap-2">
-              <Button variant="outline" className="w-full  rounded-xl">
+              <Button variant="outline" className="w-full  rounded-xl" disabled>
                 <svg
                   width="24"
                   height="24"
@@ -78,9 +79,7 @@ export default function LoginPage() {
                     fill="#1976D2"
                   />
                 </svg>
-                <span className="dark:text-white text-gray-50">
-                  به حساب کاربری با گوگل
-                </span>
+                ورود به حساب کاربری با گوگل
               </Button>
 
               <div className="flex items-center my-4">

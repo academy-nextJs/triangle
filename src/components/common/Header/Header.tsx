@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ModeToggle } from "../DarkButton/ModeToggle";
+import PizaSvg from "@/components/Svg/PizaSvg";
 
 // src/app/components/Header.tsx
 export default function Header() {
@@ -28,7 +29,7 @@ export default function Header() {
           <Link href="/">خانه</Link>
         </Button>
       </div>
-      <div className="flex font-serif mr-2 font-normal text-2xl">PIZA</div>
+      <PizaSvg />
     </div>
   );
 }
