@@ -42,7 +42,7 @@ const TopRank = () => {
             alt="رتبه"
             width={24}
             height={24}
-            className="object-contain"
+            className="object-contain invert-0 dark:invert"
             priority
           />
         </motion.div>
@@ -54,7 +54,7 @@ const TopRank = () => {
 
         <p
           dir="rtl"
-          className="text-sm md:text-base text-justify mt-7 font-normal font-[IranYekanRegular] text-[#2C2C2C] transition-transform hover:scale-105  duration-300"
+          className="text-sm md:text-base text-justify mt-7 font-normal font-[IranYekanRegular] dark:text-gray-500 text-[#2C2C2C] transition-transform hover:scale-105  duration-300"
         >
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
