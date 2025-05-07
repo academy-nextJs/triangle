@@ -19,13 +19,13 @@ export default function Header() {
       </div>
       <div className="w-[228px] h-[21px] grow-7 flex">
         <Button className=" font-bold text-[16px]" variant="link">
-          درباره ما
+          <Link href="/ContactUs">درباره ما</Link>
         </Button>
         <Button className=" font-bold text-[16px]" variant="link">
           مقالات
         </Button>
         <Button className=" font-bold text-[16px]" variant="link">
-          خانه
+          <Link href="/">خانه</Link>
         </Button>
       </div>
       <div className="flex font-serif mr-2 font-normal text-2xl">PIZA</div>

@@ -19,7 +19,7 @@ export default function RegisterPage() {
       className="flex min-h-screen items-center justify-center bg-gray-50"
       dir="rtl"
     >
-      <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg bg-white overflow-hidden">
+      <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 bg-white overflow-hidden">
         {/* Right side content */}
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-3/5 flex-col gap-2">

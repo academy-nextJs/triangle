@@ -39,7 +39,7 @@ export default function LoginPage() {
       className="flex min-h-screen items-center justify-center bg-gray-50"
       dir="rtl"
     >
-      <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-black dark:text-white bg-white overflow-hidden">
+      <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 dark:text-white bg-white overflow-hidden">
         {/* Right side content */}
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-3/5 flex-col gap-2">
@@ -52,8 +52,8 @@ export default function LoginPage() {
               ایمیل و رمزعبور خود اقدام کنید
             </p>
 
-            <div className="flex flex-col font-bold gap-2">
-              <Button variant="outline" className="w-full rounded-xl" disabled>
+            <div className="flex flex-col  font-bold gap-2">
+              <Button variant="outline" className="w-full  rounded-xl">
                 <svg
                   width="24"
                   height="24"
@@ -78,7 +78,9 @@ export default function LoginPage() {
                     fill="#1976D2"
                   />
                 </svg>
-                ورود به حساب کاربری با گوگل
+                <span className="dark:text-white text-gray-50">
+                  به حساب کاربری با گوگل
+                </span>
               </Button>
 
               <div className="flex items-center my-4">
