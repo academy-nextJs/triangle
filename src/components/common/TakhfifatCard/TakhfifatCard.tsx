@@ -17,16 +17,16 @@ interface TakhfifatCardProps {
 }
 
 const TakhfifatCard = ({
-    title,
-    location,
-    bedCount,
-    bathCount,
-    capacity,
-    price,
-    oldPrice,
-    discount,
-    image,
-  }: TakhfifatCardProps) => {
+  title,
+  location,
+  bedCount,
+  bathCount,
+  capacity,
+  price,
+  oldPrice,
+  discount,
+  image,
+}: TakhfifatCardProps) => {
   return (
     <Card className="bg-white shadow-lg rounded-[40px] w-[391px] h-[448px] overflow-hidden">
       <div className="flex justify-center items-center w-full h-[221px] ">
@@ -94,7 +94,7 @@ const TakhfifatCard = ({
         </div>
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default TakhfifatCard
+export default TakhfifatCard;
