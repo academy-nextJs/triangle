@@ -6,8 +6,13 @@ import Comments from './Comments/Comments'
 import Takhfifat from './takhfifat/Takhfifat'
 import {CategoryGrid} from './Categories'
 import SelandBoy from './SeelandBay'
+import { Comment } from '@/types/Landing/Comments'
 
-const LandingContainer = () => {
+interface Props {
+  comments: Comment[];
+}
+
+const LandingContainer = ({comments}:Props) => {
   return (
     <div className=' ' >
       <HeroSection/>
@@ -16,7 +21,7 @@ const LandingContainer = () => {
       <SelandBoy/>
       <TopRank/>
       <VillaRental/>
-      <Comments/>
+      <Comments comments={comments} />
     </div>
   )
 }
