@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import CountdownTimer from "@/components/ui/CountdownTimer";
 
 
-
+ 
 
 const staticCards = [
   {
