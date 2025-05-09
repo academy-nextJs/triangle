@@ -5,8 +5,8 @@ const Footer = () => {
     <div className="dark:bg-black bg-white text-gray-700 w-full px-6 py-10">
       <div className="max-w-7xl mx-auto border-t-2 dark:border-white border-[#000000] mb-10"></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col gap-32 md:flex-row-reverse  ">
-        <div dir="rtl" className="flex flex-col gap-4 md:w-1/3">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-32 xl:flex-row-reverse xl:items-start xl:justify-between">
+        <div dir="rtl" className="flex flex-col gap-4 w-full xl:w-1/3 px-4">
           <h2 className="flex font-serif font-normal text-4xl dark:text-white text-[#000000]">
             PIZA
           </h2>
@@ -24,9 +24,9 @@ const Footer = () => {
 
         <div
           dir="rtl"
-          className=" flex flex-col  md:flex-row mt-14  gap-24  md:w-2/3"
+          className="flex flex-col items-center text-center mt-14 gap-16 w-full md:flex-row xl:items-start xl:text-right xl:w-2/3 px-4"
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 w-full xl:w-1/3">
             <h3 className="text-xl dark:text-blue-300 text-[#1E1E1E] font-semibold whitespace-nowrap font-[IranYekanMedium]">
               نحوه رزرو اقامتگاه
             </h3>
@@ -35,17 +35,15 @@ const Footer = () => {
                 راهنمای رزرو اقامتگاه
               </li>
               <li className="font-normal text-base text-[#AAAAAA] whitespace-nowrap font-[IranYekanMedium]">
-                {" "}
                 شیوه پرداخت
               </li>
               <li className="font-normal text-base text-[#AAAAAA] whitespace-nowrap font-[IranYekanMedium]">
-                {" "}
                 لغو رزرو اقامتگاه
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 w-full xl:w-1/3">
             <h3 className="text-xl dark:text-blue-300 text-[#1E1E1E] font-semibold whitespace-nowrap font-[IranYekanMedium]">
               خدمات مشتریان
             </h3>
@@ -65,7 +63,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 w-full xl:w-1/3">
             <h4 className="text-xl dark:text-blue-300 text-[#1E1E1E] font-semibold whitespace-nowrap font-[IranYekanMedium]">
               راه ارتباطی دلتا
             </h4>
