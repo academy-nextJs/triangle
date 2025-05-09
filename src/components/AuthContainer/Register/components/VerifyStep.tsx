@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CodeInput } from "@/components/Shared/CodeInput";
 import { ClockFading } from "lucide-react";
 import httpClient from "@/utils/services/interceptor/httpClient";
+import Link from "next/link";
 
 interface VerifyStepProps {
   email: string;
@@ -72,16 +73,13 @@ export function VerifyStep({
   return (
     <div className="flex flex-col w-4/5 pt-4 gap-4 space-y-6 lg:px-16">
       <div>
-        <p className="text-gray-600 text-sm">
-          کد تأیید ارسال شده به {email} را وارد کنید.
-        </p>
-        <button
-          onClick={handleResend}
-          disabled={timer > 0}
+        <p className=" text-sm">کد تأیید ارسال شده به {email} را وارد کنید.</p>
+        <Link
+          href={"/Register"}
           className="text-sm underline text-blue-500 disabled:text-gray-400"
         >
-          تغییر ایمیل یا ارسال مجدد
-        </button>
+          تغییر ایمیل
+        </Link>
       </div>
       <div className="flex flex-col gap-2">
         <p className="pr-10">کد تأیید</p>
@@ -91,10 +89,19 @@ export function VerifyStep({
           onChange={(value: string) => setCode(value)}
         />
 
-        <p className="text-center flex text-sm w-20 px-2 mr-9 gap-1 items-center py-1.5 bg-[#586CFF30] rounded-2xl text-[#586CFF]">
-          <ClockFading />
-          {formatTime(timer)}
-        </p>
+        {timer > 0 ? (
+          <p className="text-center flex text-sm w-20 px-2 mr-9 gap-1 items-center py-1.5 bg-[#586CFF30] rounded-2xl text-[#586CFF]">
+            <ClockFading />
+            {formatTime(timer)}
+          </p>
+        ) : (
+          <button
+            onClick={handleResend}
+            className="text-center justify-center flex text-sm w-24 px-2 mr-9 gap-1 items-center py-1.5 bg-[#586CFF30] rounded-2xl text-[#586CFF]"
+          >
+            ارسال مجدد
+          </button>
+        )}
       </div>
 
       <Button
