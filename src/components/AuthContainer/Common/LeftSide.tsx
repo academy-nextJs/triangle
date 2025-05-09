@@ -10,8 +10,10 @@ const LeftSide = () => {
         className="relative flex flex-col md:w-1/2 bg-cover rounded-3xl bg-center"
         style={{ backgroundImage: 'url("/images/register.png")' }}
       >
-        <div className="absolute top-5  right-5  flex gap-1  text-white text-base font-bold  rounded-3xl">
-          <MapSvg />
+        <div className="absolute top-5  right-5  flex gap-7  text-white text-base font-bold  rounded-3xl">
+          <div>
+            <MapSvg />
+          </div>
           جنگل گلستان
         </div>
         <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start dark:bg-gray-950 bg-white text-base font-bold   rounded-2xl">
