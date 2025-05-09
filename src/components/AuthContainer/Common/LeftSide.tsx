@@ -1,5 +1,7 @@
 "use client";
 
+import ArrowLeft from "@/components/Svg/ArrowLeft";
+import ArrowRight from "@/components/Svg/ArrowRight";
 import MapSvg from "@/components/Svg/MapSvg";
 import React from "react";
 
@@ -10,13 +12,14 @@ const LeftSide = () => {
         className="relative flex flex-col md:w-1/2 bg-cover rounded-3xl bg-center"
         style={{ backgroundImage: 'url("/images/register.png")' }}
       >
-        <div className="absolute top-5  right-5  flex gap-1  text-white text-base font-bold  rounded-3xl">
-          <MapSvg />
+        <div className="absolute top-5  right-5  flex gap-7  text-white text-base font-bold  rounded-3xl">
+          <div>
+            <MapSvg />
+          </div>
           جنگل گلستان
         </div>
         <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start dark:bg-gray-950 bg-white text-base font-bold   rounded-2xl">
           <svg
-            className="text-black dark:text-white"
             width="20"
             height="20"
             viewBox="0 0 20 20"
@@ -62,34 +65,10 @@ const LeftSide = () => {
               </div>
             </div>
             <div className="flex gap-2 justify-center items-center">
-              <svg
-                width="42"
-                height="16"
-                viewBox="0 0 42 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM41.7071 8.70711C42.0976 8.31658 42.0976 7.68342 41.7071 7.29289L35.3431 0.928932C34.9526 0.538408 34.3195 0.538408 33.9289 0.928932C33.5384 1.31946 33.5384 1.95262 33.9289 2.34315L39.5858 8L33.9289 13.6569C33.5384 14.0474 33.5384 14.6805 33.9289 15.0711C34.3195 15.4616 34.9526 15.4616 35.3431 15.0711L41.7071 8.70711ZM1 9H41V7H1V9Z"
-                  fill="currentColor"
-                />
-              </svg>
+              <ArrowRight />
+              <ArrowLeft />
 
               <svg
-                width="42"
-                height="16"
-                viewBox="0 0 42 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M41 7C41.5523 7 42 7.44772 42 8C42 8.55228 41.5523 9 41 9V7ZM0.292892 8.70711C-0.0976295 8.31658 -0.0976295 7.68342 0.292892 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41422 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292892 8.70711ZM41 9H1V7H41V9Z"
-                  fill="currentColor"
-                />
-              </svg>
-
-              <svg
-                className=""
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"

@@ -41,7 +41,6 @@ export default function LoginPage() {
       dir="rtl"
     >
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 dark:text-white bg-white overflow-hidden">
-        {/* Right side content */}
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-4/6 flex-col gap-2">
             <PizaSvg />
@@ -143,7 +142,6 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Left side image */}
         <LeftSide />
       </div>
     </div>

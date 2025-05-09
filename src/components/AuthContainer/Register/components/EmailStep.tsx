@@ -1,5 +1,6 @@
 "use client";
 
+import MailSvg from "@/components/Svg/MailSvg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import httpClient from "@/utils/services/interceptor/httpClient";
@@ -81,14 +82,17 @@ export function EmailStep({
         <form onSubmit={handleSubmit}>
           <div>
             <h3 className="mb-2">ایمیل</h3>
-            <Input
-              className="h-10 rounded-xl"
-              type="email"
-              placeholder="ایمیل خود را وارد کنید"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <div className="relative">
+              <MailSvg />
+              <Input
+                className="h-10 rounded-xl pr-10"
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <div className="pt-2">
             <Button type="submit" className="w-full rounded-xl bg-[#586CFF]">
