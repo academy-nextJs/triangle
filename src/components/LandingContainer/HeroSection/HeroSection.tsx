@@ -35,7 +35,7 @@ const HeroSection = () => {
 
   return (
     <div className="  flex  justify-center ">
-      <div className="flex w-[1260px] items-center flex-wrap justify-around  mt-9">
+      <div className="flex w-[1260px] items-center flex-wrap justify-between  mt-9">
         <div className=" w-[457px] h-[594px] ">
           <BlurFade delay={0.3} inView>
             <Image className=" rounded-4xl" src={epartman} alt={""} />
@@ -56,7 +56,7 @@ const HeroSection = () => {
                     />
                     <button
                       onClick={() => setActiveTab(tab)}
-                      className={`px-4 py-2 text-[16px] font-medium dark:bg-[#020618] dark:text-gray-200  bg-white transition-all ${
+                      className={`px-4 py-2 text-[16px] font-medium dark:bg-[#020618] dark:text-gray-200  bg-white transition-all font-[IranYekanRegular] ${
                         activeTab === tab
                           ? "text-blue-600 bg-blue-100"
                           : "text-gray-600 bg-gray-100"
@@ -71,7 +71,7 @@ const HeroSection = () => {
               {/* Form Fields */}
               <div className="flex flex-nowrap gap-4 md:gap-6 items-center justify-center md:justify-start">
                 {/* مشاهده نتیجه */}
-                <Button className="h-[48px] px-6 bg-blue-600 text-white dark:text-gray-200  hover:bg-blue-700 whitespace-nowrap">
+                <Button className="h-[48px] px-6 bg-blue-600 text-white dark:text-gray-200  hover:bg-blue-700 whitespace-nowrap font-[IranYekanRegular]">
                   مشاهده نتیجه
                 </Button>
 
@@ -81,10 +81,10 @@ const HeroSection = () => {
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 "
+                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 font-[IranYekanRegular]"
                       >
-                        <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200 " />
-                        <span className=" text-[12px] xl:text-[14px] dark:text-gray-200 ">
+                        <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200  font-[IranYekanRegular]" />
+                        <span className=" text-[12px] xl:text-[14px] dark:text-gray-200 font-[IranYekanRegular] ">
                           {endDate
                             ? format(endDate, "yyyy/MM/dd")
                             : "انتخاب تاریخ"}
@@ -100,12 +100,11 @@ const HeroSection = () => {
                       />
                     </PopoverContent>
                   </Popover>
-                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium dark:text-gray-200  min-w-max">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium dark:text-gray-200  min-w-max font-[IranYekanRegular]">
                     :تاریخ خروج
                   </label>
                 </div>
 
-                {/* تاریخ ورود */}
                 <div className="flex items-center gap-2 relative">
                   <Popover>
                     <PopoverTrigger asChild>
@@ -114,7 +113,7 @@ const HeroSection = () => {
                         className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative dark:text-gray-200  text-gray-400"
                       >
                         <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200 " />
-                        <span className=" text-[12px] xl:text-[14px] text-right dark:text-gray-200 ">
+                        <span className=" text-[12px] xl:text-[14px] text-right dark:text-gray-200 font-[IranYekanRegular]">
                           {startDate
                             ? format(startDate, "yyyy/MM/dd")
                             : "انتخاب تاریخ"}
@@ -130,15 +129,15 @@ const HeroSection = () => {
                       />
                     </PopoverContent>
                   </Popover>
-                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 font-[IranYekanRegular]">
                     :تاریخ ورود
                   </label>
                 </div>
 
                 {/* تعداد نفرات */}
                 <div className="flex items-center gap-2">
-                  <Input placeholder="تعداد" className=" w-[122px] xl:w-[162px] h-[48px]" />
-                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <Input placeholder="تعداد" className=" w-[122px] xl:w-[162px] h-[48px] font-[IranYekanRegular]" />
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 font-[IranYekanRegular]">
                     :تعداد نفرات
                   </label>
                 </div>
@@ -146,8 +145,8 @@ const HeroSection = () => {
                 {/* انتخاب مقصد */}
                 <div className="flex items-center gap-2">
                   <Select onValueChange={(value) => setDestination(value)}>
-                    <SelectTrigger className=" w-[122px] xl:w-[162px] h-[48px] ">
-                      <SelectValue placeholder="مقصد" className="dark:text-gray-200 " />
+                    <SelectTrigger className=" w-[122px] xl:w-[162px] h-[48px] font-[IranYekanRegular] ">
+                      <SelectValue placeholder="مقصد" className="dark:text-gray-200 font-[IranYekanRegular] " />
                     </SelectTrigger>
                     <SelectContent>
                       {destinations.map((city) => (
@@ -157,7 +156,7 @@ const HeroSection = () => {
                       ))}
                     </SelectContent>
                   </Select>
-                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 font-[IranYekanRegular]">
                     :انتخاب مقصد
                   </label>
                 </div>
@@ -170,14 +169,14 @@ const HeroSection = () => {
         <div className="flax justify-items-end">
           <div className="w-[418px] h-[106px] gap-2">
             <BlurFade delay={0.3} inView>
-              <p className="font-bold text-4xl text-right ">
+              <p className="font-bold text-4xl text-right font-[IranYekanMedium] ">
                 راحت ترین راه برای پیدا کردن خونه مورد علاقت
               </p>
             </BlurFade>
           </div>
           <div className="w-[418px] h-[106px] gap-3">
             <BlurFade delay={0.3 * 2} inView>
-              <p className="font-semibold text-[#727272] text-right">
+              <p className="font-semibold text-[#727272] text-right font-[IranYekanRegular]">
                 رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب
                 خوردن فقط در پیزا
               </p>
@@ -189,7 +188,7 @@ const HeroSection = () => {
                 className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
                 asChild
               >
-                <Link href="/login">
+                <Link href="/login" className="font-[IranYekanRegular]">
                   <LucideArrowLeft /> رهن و اجاره ملک
                 </Link>
               </Button>

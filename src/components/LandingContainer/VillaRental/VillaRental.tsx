@@ -57,7 +57,7 @@ const VillaRental = () => {
   {destinations.map((dest) => (
     <div
       key={dest.id}
-      className="dark:bg-blue-300  rounded-4xl dark:border-none border border-[#EAEAEA] shadow-sm overflow-hidden"
+      className="dark:bg-gray-950  rounded-4xl dark:border-none border border-[#EAEAEA] shadow-sm overflow-hidden"
     >
       <div className="p-4 ">
         <div className=" w-full ">
@@ -92,7 +92,7 @@ const VillaRental = () => {
         >
           (50 مورد)
         </div>
-        <div className="text-center text-base font-semibold font-[IranYekanRegular] text-[#1E1E1E]">
+        <div className="text-center text-base font-semibold font-[IranYekanRegular] ">
           {dest.area_name}
         </div>
       </div>
@@ -117,7 +117,7 @@ const VillaRental = () => {
           key={dest.id}
           className="pl-4 basis-full sm:basis-1/2"
         >
-          <div className=" dark:bg-blue-300  rounded-4xl dark:border-none borde bg-white  border border-[#EAEAEA] shadow-sm overflow-hidden">
+          <div className=" dark:bg-indigo-900  rounded-4xl dark:border-none borde bg-white  border border-[#EAEAEA] shadow-sm overflow-hidden">
             <div className="p-4">
               <div className=" w-full ">
                 <motion.div
