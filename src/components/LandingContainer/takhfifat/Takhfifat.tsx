@@ -4,6 +4,7 @@ import TakhfifatCard from "@/components/common/TakhfifatCard/TakhfifatCard";
 import { Button } from "@/components/ui/button";
 
 import CountdownTimer from "@/components/ui/CountdownTimer";
+import Link from "next/link";
 
 const staticCards = [
   {
@@ -41,12 +42,15 @@ const staticCards = [
 const Takhfifat = () => {
   return (
     <div className="container mx-auto max-w-7xl p-4">
-      <div className="flex flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
+      <div className="flex  flex-col sm:flex-row justify-between items-center mt-[122px] mb-10 px-4">
         <Button
+        
           variant="default"
-          className="rounded-2xl bg-[#586CFF] text-white sm:w-[124px] w-[100%] h-[48px] mt-4 sm:mt-0 text-[16px] "
+          className="rounded-2xl font-[IranYekanRegular] bg-[#586CFF] text-white sm:w-[124px] w-[100%] h-[48px] mt-4 sm:mt-0 text-[16px] "
         >
-          مشاهده همه
+          
+         <Link href="/HouseReserve"> مشاهده همه </Link>
+
         </Button>
         <div className="flex items-center gap-3 ">
           <CountdownTimer
@@ -57,12 +61,12 @@ const Takhfifat = () => {
             بهاره
           </span>
 
-          <h2 className="text-[28px] font-bold pb-7 text-slate-800">
+          <h2 className="text-[28px] font-bold pb-7 font-[IranYekanRegular] dark:text-gray-100 text-slate-800">
             تخفیفات ویژه
           </h2>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap  justify-center gap-4">
         {staticCards.map((item, id) => (
           <TakhfifatCard key={id} {...item} />
         ))}

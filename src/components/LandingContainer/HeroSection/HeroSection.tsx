@@ -189,7 +189,7 @@ const HeroSection = () => {
                 className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
                 asChild
               >
-                <Link href="/login">
+                <Link href="/Mortgage-Rent">
                   <LucideArrowLeft /> رهن و اجاره ملک
                 </Link>
               </Button>
