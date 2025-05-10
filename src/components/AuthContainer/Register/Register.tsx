@@ -7,6 +7,7 @@ import { EmailStep } from "./components/EmailStep";
 import { VerifyStep } from "./components/VerifyStep";
 import { InfoStep } from "./components/InfroStep";
 import PizaSvg from "@/components/Svg/PizaSvg";
+import ExitAuth from "../Common/ExitAuth";
 
 export default function RegisterPage() {
   const [step, setStep] = useState(1);
@@ -23,7 +24,10 @@ export default function RegisterPage() {
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 bg-white overflow-hidden">
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-4/6 flex-col gap-2">
-            <PizaSvg />
+            <div className="flex justify-between">
+              <PizaSvg />
+              <ExitAuth />
+            </div>
 
             <h2 className="text-2xl font-bold">ثبت نام در پیزا</h2>
           </div>

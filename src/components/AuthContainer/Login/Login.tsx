@@ -10,6 +10,7 @@ import MailSvg from "@/components/Svg/MailSvg";
 import LockSvg from "@/components/Svg/LockSvg";
 import Link from "next/link";
 import PizaSvg from "@/components/Svg/PizaSvg";
+import ExitAuth from "../Common/ExitAuth";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -43,7 +44,11 @@ export default function LoginPage() {
       <div className="flex w-screen h-screen p-5 rounded-2xl shadow-lg dark:bg-gray-950 dark:text-white bg-white overflow-hidden">
         <div className="flex flex-col items-center justify-center w-full xl:p-8 md:w-1/2">
           <div className="flex w-4/6 flex-col gap-2">
-            <PizaSvg />
+            <div className="flex justify-between">
+              <PizaSvg />
+              <ExitAuth />
+            </div>
+
             <h2 className="text-2xl font-bold">ورود به پیزا</h2>
           </div>
           <div className="flex flex-col w-4/5 gap-4 space-y-6 lg:px-16">

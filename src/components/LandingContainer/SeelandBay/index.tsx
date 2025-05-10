@@ -21,7 +21,7 @@ const SelandBoy = () => {
           مشاهده همه
         </Button>
         <div className="flex items-center gap-3 flex-wrap">
-          <h2 className="text-[28px] font-bold pb-7 text-slate-800 w-[274px] h-[72px] text-right">
+          <h2 className="text-[28px] font-bold pb-7  w-[274px] h-[72px] text-right">
             خرید و فروش های داغ این هفته
           </h2>
         </div>

@@ -40,7 +40,7 @@ export default function Header() {
         >
           <Link href="/Login">ثبت نام و ورود</Link>
         </Button>
-        <div className="mt-[14px]">
+        <div className="hidden md:block mt-[14px]">
           <ModeToggle />
         </div>
       </div>
@@ -58,7 +58,10 @@ export default function Header() {
 
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <Button className="lg:hidden mr-2 bg-[#586CFF] mt-3" onClick={() => setOpen(true)}>
+          <Button
+            className="lg:hidden mr-2 bg-[#586CFF] mt-3"
+            onClick={() => setOpen(true)}
+          >
             فیلتر
           </Button>
         </DrawerTrigger>
@@ -193,7 +196,9 @@ export default function Header() {
           </div>
         </DrawerContent>
       </Drawer>
-      <div className="flex font-serif mr-2 font-normal  text-[18px] sm:text-2xl">PIZA</div>
+      <div className="flex font-serif mr-2 font-normal  text-[18px] sm:text-2xl">
+        PIZA
+      </div>
     </div>
   );
 }
