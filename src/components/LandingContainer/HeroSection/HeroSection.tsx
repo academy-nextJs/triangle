@@ -81,7 +81,7 @@ const HeroSection = () => {
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 font-[IranYekanRegular]"
+                        className=" w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 font-[IranYekanRegular]"
                       >
                         <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200  font-[IranYekanRegular]" />
                         <span className=" text-[12px] xl:text-[14px] dark:text-gray-200 font-[IranYekanRegular] ">
@@ -110,7 +110,7 @@ const HeroSection = () => {
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative dark:text-gray-200  text-gray-400"
+                        className=" w-[122px]  xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative dark:text-gray-200  text-gray-400"
                       >
                         <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200 " />
                         <span className=" text-[12px] xl:text-[14px] text-right dark:text-gray-200 font-[IranYekanRegular]">
@@ -188,7 +188,7 @@ const HeroSection = () => {
                 className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
                 asChild
               >
-                <Link href="/login" className="font-[IranYekanRegular]">
+                <Link href="/Mortgage-Rent">
                   <LucideArrowLeft /> رهن و اجاره ملک
                 </Link>
               </Button>
