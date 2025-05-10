@@ -35,7 +35,7 @@ export default function Header() {
     <div className="flex items-center justify-center  max-w-7xl mx-auto">
       <div className="flex gap-2 items-center  ml-3 grow-7">
         <Button
-          className="w-[129px] h-[40px] mt-[14px] rounded-2xl bg-[#586CFF]"
+          className=" w-[109px] sm:w-[129px] h-[40px] mt-[14px] rounded-2xl bg-[#586CFF]"
           asChild
         >
           <Link href="/Login">ثبت نام و ورود</Link>
@@ -58,7 +58,7 @@ export default function Header() {
 
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <Button className="lg:hidden mr-2 bg-[#586CFF]" onClick={() => setOpen(true)}>
+          <Button className="lg:hidden mr-2 bg-[#586CFF] mt-3" onClick={() => setOpen(true)}>
             فیلتر
           </Button>
         </DrawerTrigger>
@@ -193,7 +193,7 @@ export default function Header() {
           </div>
         </DrawerContent>
       </Drawer>
-      <div className="flex font-serif mr-2 font-normal text-2xl">PIZA</div>
+      <div className="flex font-serif mr-2 font-normal  text-[18px] sm:text-2xl">PIZA</div>
     </div>
   );
 }
