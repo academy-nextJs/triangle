@@ -58,7 +58,7 @@ export default function Header() {
 
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <Button className="xl:hidden mr-2 bg-[#586CFF]" onClick={() => setOpen(true)}>
+          <Button className="lg:hidden mr-2 bg-[#586CFF]" onClick={() => setOpen(true)}>
             فیلتر
           </Button>
         </DrawerTrigger>

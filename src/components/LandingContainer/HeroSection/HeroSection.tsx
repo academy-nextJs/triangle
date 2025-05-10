@@ -35,13 +35,14 @@ const HeroSection = () => {
 
   return (
     <div className="  flex  justify-center ">
-      <div className="flex w-[1260px] items-center   justify-around  mt-9">
-        <div className=" w-auto lg:w-[457px] h-[594px] ">
+      <div className="flex w-[1260px] items-center flex-wrap justify-around  mt-9">
+        <div className=" w-[457px] h-[594px] ">
           <BlurFade delay={0.3} inView>
             <Image className=" rounded-4xl" src={epartman} alt={""} />
           </BlurFade>
         </div>
-        <div className=" mx-auto h-auto absolute xl:flex hidden top-[11%] transform -translate-y-1/2 px-4">
+        <div className=" mx-auto h-auto absolute lg:flex hidden top-[11%] transform -translate-y-1/2 px-4">
+        <BlurFade delay={0.3} inView>
           <div className="flex flex-col items-center w-full">
             <div className="w-full dark:bg-[#020618] bg-white rounded-2xl shadow-md p-4 md:p-6 flex flex-col gap-6">
               {/* Tabs */}
@@ -80,10 +81,10 @@ const HeroSection = () => {
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className="w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 "
+                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative text-gray-400 dark:text-gray-200 "
                       >
                         <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200 " />
-                        <span className="text-[14px] dark:text-gray-200 ">
+                        <span className=" text-[12px] xl:text-[14px] dark:text-gray-200 ">
                           {endDate
                             ? format(endDate, "yyyy/MM/dd")
                             : "انتخاب تاریخ"}
@@ -99,7 +100,7 @@ const HeroSection = () => {
                       />
                     </PopoverContent>
                   </Popover>
-                  <label className="text-gray-700 text-[14px] font-medium dark:text-gray-200  min-w-max">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium dark:text-gray-200  min-w-max">
                     :تاریخ خروج
                   </label>
                 </div>
@@ -110,10 +111,10 @@ const HeroSection = () => {
                     <PopoverTrigger asChild>
                       <Button
                         variant="outline"
-                        className="w-[162px] h-[48px] justify-start pl-10 pr-3 relative dark:text-gray-200  text-gray-400"
+                        className=" w-[122px] xl: w-[122px] xl:w-[162px] h-[48px] justify-start pl-10 pr-3 relative dark:text-gray-200  text-gray-400"
                       >
                         <RxCalendar className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-200 " />
-                        <span className="text-[14px] text-right dark:text-gray-200 ">
+                        <span className=" text-[12px] xl:text-[14px] text-right dark:text-gray-200 ">
                           {startDate
                             ? format(startDate, "yyyy/MM/dd")
                             : "انتخاب تاریخ"}
@@ -129,15 +130,15 @@ const HeroSection = () => {
                       />
                     </PopoverContent>
                   </Popover>
-                  <label className="text-gray-700 text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
                     :تاریخ ورود
                   </label>
                 </div>
 
                 {/* تعداد نفرات */}
                 <div className="flex items-center gap-2">
-                  <Input placeholder="تعداد" className="w-[162px] h-[48px]" />
-                  <label className="text-gray-700 text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <Input placeholder="تعداد" className=" w-[122px] xl:w-[162px] h-[48px]" />
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
                     :تعداد نفرات
                   </label>
                 </div>
@@ -145,7 +146,7 @@ const HeroSection = () => {
                 {/* انتخاب مقصد */}
                 <div className="flex items-center gap-2">
                   <Select onValueChange={(value) => setDestination(value)}>
-                    <SelectTrigger className="w-[162px] h-[48px] ">
+                    <SelectTrigger className=" w-[122px] xl:w-[162px] h-[48px] ">
                       <SelectValue placeholder="مقصد" className="dark:text-gray-200 " />
                     </SelectTrigger>
                     <SelectContent>
@@ -156,13 +157,14 @@ const HeroSection = () => {
                       ))}
                     </SelectContent>
                   </Select>
-                  <label className="text-gray-700 text-[14px] font-medium min-w-max dark:text-gray-200 ">
+                  <label className="text-gray-700  text-[12px] xl:text-[14px] font-medium min-w-max dark:text-gray-200 ">
                     :انتخاب مقصد
                   </label>
                 </div>
               </div>
             </div>
           </div>
+        </BlurFade>
         </div>
 
         <div className="flax justify-items-end">
@@ -181,7 +183,7 @@ const HeroSection = () => {
               </p>
             </BlurFade>
           </div>
-          <div className="w-[160px] h-[106px] mb-52">
+          <div className="w-[160px] h-[106px] mb-1 lg:mb-52">
             <BlurFade delay={0.3 * 3} inView>
               <Button
                 className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
