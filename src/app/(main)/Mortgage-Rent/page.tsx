@@ -54,13 +54,24 @@ export default function MortgageRentPage() {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-start gap-4">
-        {/* {fakeCards.map((_, index) => (
-          <div key={index} className="w-full sm:w-[48%] md:w-[32%]">
-            <TakhfifatCard  />
-          </div>
-        ))} */}
-      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-2">
+  {fakeCards.slice(0, 6).map((_, index) => (
+    <div key={index} className="flex justify-center">
+      <TakhfifatCard 
+      title="آپارتمان لوکس زعفرانیه"
+        location="تهران : زعفرانیه"
+        bedCount={2}
+        bathCount={2}
+        capacity={4}
+        price="۱,۵۰۰,۰۰۰ تومان"
+        oldPrice="۱,۸۰۰,۰۰۰ تومان"
+        discount="۱۵"
+      
+      
+      />
+    </div>
+  ))}
+</div>
     </div>
   );
 }
