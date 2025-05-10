@@ -3,12 +3,22 @@
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { format } from "date-fns";
 import { LucideArrowLeft } from "lucide-react";
 import { RxCalendar } from "react-icons/rx";
-import epartman from "../../../../public/eparteman.png"
+import epartman from "../../../../public/eparteman.png";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -20,10 +30,11 @@ const HeroSection = () => {
   const [endDate, setEndDate] = useState<Date>();
   const [destination, setDestination] = useState<string>("");
 
-  const tabs = ["خرید و فروش","رهن و اجاره",  "رزرو ملک" ];
+  const tabs = ["خرید و فروش", "رهن و اجاره", "رزرو ملک"];
   const destinations = ["تهران", "مشهد", "اصفهان", "شیراز", "تبریز"];
 
   return (
+<<<<<<< HEAD
     <div className="flex max-w-[1280px] items-center justify-around  mt-9">
       <div className="w-[457px] h-[594px] "> 
       <BlurFade delay={0.30} inView>
@@ -32,6 +43,13 @@ const HeroSection = () => {
           src={epartman} alt={""}        
         />
          </BlurFade>
+=======
+    <div className="flex  items-center justify-around  flex-wrap mt-9">
+      <div className="w-[457px] h-[594px] ">
+        <BlurFade delay={0.3} inView>
+          <Image className=" rounded-4xl" src={epartman} alt={""} />
+        </BlurFade>
+>>>>>>> fa6318a701e04888e653eba03cbebc3caf5804a3
       </div>
       <div className=" mx-auto h-auto absolute top-[11%] transform -translate-y-1/2 px-4">
   <div className="flex flex-col items-center w-full">
@@ -123,32 +141,30 @@ const HeroSection = () => {
 
       <div className="flax justify-items-end">
         <div className="w-[418px] h-[106px] gap-2">
-      
-      
-      <BlurFade delay={0.30} inView>
-          <p className="font-bold text-4xl text-right ">
-            راحت ترین راه برای پیدا کردن خونه مورد علاقت
-          </p>
+          <BlurFade delay={0.3} inView>
+            <p className="font-bold text-4xl text-right ">
+              راحت ترین راه برای پیدا کردن خونه مورد علاقت
+            </p>
           </BlurFade>
         </div>
         <div className="w-[418px] h-[106px] gap-3">
-        <BlurFade delay={0.30 * 2} inView>
-          <p className="font-semibold text-[#727272] text-right">
-            رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب خوردن
-            فقط در پیزا
-          </p>
+          <BlurFade delay={0.3 * 2} inView>
+            <p className="font-semibold text-[#727272] text-right">
+              رزور ، رهن ، اجاره و حتی خرید و فروش ملک مورد نظرتون مثل آب خوردن
+              فقط در پیزا
+            </p>
           </BlurFade>
         </div>
         <div className="w-[160px] h-[106px] mb-52">
-        <BlurFade delay={0.30 * 3} inView>
-          <Button
-            className="w-[160px] h-[48px] mt-[14px] rounded-2xl bg-[#586CFF]"
-            asChild
-          >
-            <Link href="/login">
-              <LucideArrowLeft /> رهن و اجاره ملک
-            </Link>
-          </Button>
+          <BlurFade delay={0.3 * 3} inView>
+            <Button
+              className="w-[160px] h-[48px] mt-[14px] text-white rounded-2xl bg-[#586CFF]"
+              asChild
+            >
+              <Link href="/login">
+                <LucideArrowLeft /> رهن و اجاره ملک
+              </Link>
+            </Button>
           </BlurFade>
         </div>
       </div>

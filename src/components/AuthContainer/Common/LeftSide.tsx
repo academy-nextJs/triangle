@@ -1,5 +1,7 @@
 "use client";
 
+import ArrowLeft from "@/components/Svg/ArrowLeft";
+import ArrowRight from "@/components/Svg/ArrowRight";
 import MapSvg from "@/components/Svg/MapSvg";
 import React from "react";
 
@@ -10,11 +12,13 @@ const LeftSide = () => {
         className="relative flex flex-col md:w-1/2 bg-cover rounded-3xl bg-center"
         style={{ backgroundImage: 'url("/images/register.png")' }}
       >
-        <div className="absolute top-5  right-5  flex gap-1  text-white text-base font-bold  rounded-3xl">
-          <MapSvg />
+        <div className="absolute top-5  right-5  flex gap-7  text-white text-base font-bold  rounded-3xl">
+          <div>
+            <MapSvg />
+          </div>
           جنگل گلستان
         </div>
-        <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start dark:bg-black bg-white text-base font-bold   rounded-2xl">
+        <div className="absolute bottom-5 p-5 mx-5  flex flex-col gap-1 justify-center items-start dark:bg-gray-950 bg-white text-base font-bold   rounded-2xl">
           <svg
             width="20"
             height="20"
@@ -24,23 +28,23 @@ const LeftSide = () => {
           >
             <path
               d="M8.33317 6.66665C8.33317 8.238 8.33317 9.02365 7.84501 9.51181C7.35686 9.99998 6.57119 9.99998 4.99984 9.99998C3.42849 9.99998 2.64281 9.99998 2.15466 9.51181C1.6665 9.02365 1.6665 8.238 1.6665 6.66665C1.6665 5.0953 1.6665 4.30962 2.15466 3.82147C2.64281 3.33331 3.42849 3.33331 4.99984 3.33331C6.57119 3.33331 7.35686 3.33331 7.84501 3.82147C8.33317 4.30962 8.33317 5.0953 8.33317 6.66665Z"
-              stroke="#1C1C1C"
+              stroke=" currentColor"
               stroke-width="1.5"
             />
             <path
               d="M8.3335 5.83331V9.5684C8.3335 12.8789 6.23707 15.6864 3.3335 16.6666"
-              stroke="#1C1C1C"
+              stroke="currentColor"
               stroke-width="1.5"
               stroke-linecap="round"
             />
             <path
               d="M18.3332 6.66665C18.3332 8.238 18.3332 9.02365 17.845 9.51181C17.3568 9.99998 16.5712 9.99998 14.9998 9.99998C13.4285 9.99998 12.6428 9.99998 12.1547 9.51181C11.6665 9.02365 11.6665 8.238 11.6665 6.66665C11.6665 5.0953 11.6665 4.30962 12.1547 3.82147C12.6428 3.33331 13.4285 3.33331 14.9998 3.33331C16.5712 3.33331 17.3568 3.33331 17.845 3.82147C18.3332 4.30962 18.3332 5.0953 18.3332 6.66665Z"
-              stroke="#1C1C1C"
+              stroke="currentColor"
               stroke-width="1.5"
             />
             <path
               d="M18.3335 5.83331V9.5684C18.3335 12.8789 16.2371 15.6864 13.3335 16.6666"
-              stroke="#1C1C1C"
+              stroke="currentColor"
               stroke-width="1.5"
               stroke-linecap="round"
             />
@@ -54,41 +58,17 @@ const LeftSide = () => {
           </p>
           <div className="flex w-full justify-between pt-1">
             <div className="flex gap-2">
-              <img className="size-12 bg-black rounded-full"></img>
+              <img className="size-12 bg-gray-950 rounded-full"></img>
               <div className="flex flex-col gap-0.5">
                 <h3 className="text-sm">پارسا آقایی</h3>
                 <h4 className="text-gray-400 text-sm">12 مرداد 1403</h4>
               </div>
             </div>
             <div className="flex gap-2 justify-center items-center">
-              <svg
-                width="42"
-                height="16"
-                viewBox="0 0 42 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM41.7071 8.70711C42.0976 8.31658 42.0976 7.68342 41.7071 7.29289L35.3431 0.928932C34.9526 0.538408 34.3195 0.538408 33.9289 0.928932C33.5384 1.31946 33.5384 1.95262 33.9289 2.34315L39.5858 8L33.9289 13.6569C33.5384 14.0474 33.5384 14.6805 33.9289 15.0711C34.3195 15.4616 34.9526 15.4616 35.3431 15.0711L41.7071 8.70711ZM1 9H41V7H1V9Z"
-                  fill="black"
-                />
-              </svg>
+              <ArrowRight />
+              <ArrowLeft />
 
               <svg
-                width="42"
-                height="16"
-                viewBox="0 0 42 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M41 7C41.5523 7 42 7.44772 42 8C42 8.55228 41.5523 9 41 9V7ZM0.292892 8.70711C-0.0976295 8.31658 -0.0976295 7.68342 0.292892 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41422 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292892 8.70711ZM41 9H1V7H41V9Z"
-                  fill="#C4C4C4"
-                />
-              </svg>
-
-              <svg
-                className=""
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"

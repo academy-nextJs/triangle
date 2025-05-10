@@ -5,6 +5,7 @@
   font-style: normal;
 }
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @import "tw-animate-css";
 
@@ -14,6 +15,23 @@
   --background: #ffffff;
   --foreground: #171717;
 } */
+.leaflet-popup-content-wrapper {
+  background: #586cff;
+}
+.leaflet-popup-tip {
+  background: #586cff;
+}
+.leaflet-popup-content {
+  margin: 5px 20px 10px 0px;
+}
+.avatar-marker img {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
 
 @font-face {
   font-family: "IranYekanBlack";
@@ -205,4 +223,9 @@
   }
 }
 
-
+html {
+  transition: background-color 1s ease, color 1s ease;
+}
+body {
+  transition: background-color 1s ease, color 1s ease;
+}

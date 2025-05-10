@@ -1,5 +1,6 @@
 "use client";
 
+import MailSvg from "@/components/Svg/MailSvg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import httpClient from "@/utils/services/interceptor/httpClient";
@@ -38,7 +39,7 @@ export function EmailStep({
 
   return (
     <div className="flex flex-col w-4/5 gap-4 space-y-6 lg:px-16">
-      <p className="text-gray-600 pt-4">
+      <p className="text-gray-600 pt-4 dark:text-white">
         برای ثبت نام در آلفا می‌توانید با اکانت گوگل خود و یا با ارسال کد تأیید
         به ایمیل خود اقدام کنید
       </p>
@@ -81,14 +82,17 @@ export function EmailStep({
         <form onSubmit={handleSubmit}>
           <div>
             <h3 className="mb-2">ایمیل</h3>
-            <Input
-              className="h-10 rounded-xl"
-              type="email"
-              placeholder="ایمیل خود را وارد کنید"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <div className="relative">
+              <MailSvg />
+              <Input
+                className="h-10 rounded-xl pr-10"
+                type="email"
+                placeholder="ایمیل خود را وارد کنید"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <div className="pt-2">
             <Button type="submit" className="w-full rounded-xl bg-[#586CFF]">
