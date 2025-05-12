@@ -1,9 +1,17 @@
 import TakhfifatCard from "@/components/common/TakhfifatCard/TakhfifatCard";
 import Image from "next/image";
+import FilterDrawerServer from "./FilterDrawerServer";
+import { FilterParams } from "@/types/HouseMortgage/getHouse";
+import { getFilteredHouses } from "@/utils/services/api/HouseMortgage/HouseMortgage";
+import { mapHouseToCardProps } from "@/lib/mappers";
 
-export default function MortgageRentPage() {
-  const fakeCards = Array(9).fill(null); 
-
+export default async function MortgageRentPage({
+  searchParams,
+}: {
+  searchParams?: FilterParams;
+}) {
+  const houses = await getFilteredHouses(searchParams);
+  const cards = houses.map(mapHouseToCardProps);
   return (
     <div className="w-full   py-8 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-col items-center md:items-end  mb-4 gap-4">
@@ -35,12 +43,8 @@ export default function MortgageRentPage() {
             ))}
           </div>
 
-          <button className="w-20 h-12 rounded-2xl bg-[#586CFF]">
-            <span className="font-semibold text-base text-[#FFFFFF] font-[IranYekanRegular]">
-              {" "}
-              فیلتر ها
-            </span>
-          </button>
+         
+          <FilterDrawerServer/>
           <div className="relative">
             <input
               type="text"
@@ -55,22 +59,10 @@ export default function MortgageRentPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-2">
-  {fakeCards.slice(0, 6).map((_, index) => (
-    <div key={index} className="flex justify-center">
-      <TakhfifatCard 
-      title="آپارتمان لوکس زعفرانیه"
-        location="تهران : زعفرانیه"
-        bedCount={2}
-        bathCount={2}
-        capacity={4}
-        price="۱,۵۰۰,۰۰۰ تومان"
-        oldPrice="۱,۸۰۰,۰۰۰ تومان"
-        discount="۱۵"
-      
-      
-      />
-    </div>
-  ))}
+ {cards.map((card, index) => (
+          <TakhfifatCard key={index} {...card} />
+        ))}
+ 
 </div>
     </div>
   );

@@ -3,18 +3,8 @@ import { BathIcon, BedIcon, UsersIcon } from "lucide-react";
 import { TbMap2 } from "react-icons/tb";
 import Image from "next/image";
 import apte from "../../../../public/ape.png";
+import { TakhfifatCardProps } from "@/types/Landing/TakhfifatCardProps";
 
-interface TakhfifatCardProps {
-  title: string;
-  location: string;
-  bedCount: number;
-  bathCount: number;
-  capacity: number;
-  price: string;
-  oldPrice: string;
-  discount: string;
-  image?: string;
-}
 
 const TakhfifatCard = ({
   title,
@@ -25,13 +15,13 @@ const TakhfifatCard = ({
   price,
   oldPrice,
   discount,
-  image,
+  photos,
 }: TakhfifatCardProps) => {
   return (
     <Card className="bg-white dark:bg-gray-900 shadow-lg rounded-[40px] w-[391px] h-[448px] overflow-hidden">
       <div className="flex justify-center items-center w-full h-[221px] ">
         <Image
-          src={image || apte}
+          src={photos}
           alt="Apartment Image"
           width={359}
           height={221}
