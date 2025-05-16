@@ -1,3 +1,4 @@
+// FilterForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -9,28 +10,51 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useFilteredHouses } from "@/utils/hooks/useFilteredHouses";
+import { useRouter } from "next/navigation"; 
 
 type Filters = {
-  location?: string;
-  propertyType?: string;
-  transactionType?: string;
-  minRent?: string;
-  maxRent?: string;
-  minArea?: string;
-  maxArea?: string;
+  yardType: string;
+  transactionType: string;
+  categorie: string;
+  rooms: string;
+  bathrooms: string;
+  capacity: string;
+  minPrice: string;
+  parking: string;
+  maxPrice: string;
 };
 
-export default function FilterForm() {
-  const [filters, setFilters] = useState<Filters>({});
+type Props = {
+  onSubmit?: () => void;
+};
 
-  const handleChange = (key: keyof Filters, value: string) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
-  };
+export default function FilterForm({ onSubmit }: Props) {
+  const [filters, setFilters] = useState<Filters>({
+    yardType: "",
+    transactionType: "",
+    capacity: "",
+    categorie: "",
+    rooms: "",
+    bathrooms: "",
+    minPrice: "",
+    maxPrice: "",
+    parking: "",
+  });
+
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("فیلترها:", filters);
-    // بعداً اینجا useQuery با params میاد
+
+    const query = new URLSearchParams();
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) query.append(key, value);
+    });
+
+    router.push(`?${query.toString()}`); 
+    onSubmit?.(); 
   };
 
   return (
@@ -39,54 +63,77 @@ export default function FilterForm() {
       onSubmit={handleSubmit}
       className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-white rounded-md w-full max-w-screen-md mx-auto"
     >
-      {/* محل مورد نظر */}
       <div className="w-full">
         <label className="block text-sm font-medium text-gray-800 mb-1 font-[IranYekanRegular]">
           محل مورد نظر
         </label>
         <Select
           dir="rtl"
-          onValueChange={(value) => handleChange("location", value)}
+          name="yardType"
+          value={filters.yardType}
+          onValueChange={(value) =>
+            setFilters((prev) => ({ ...prev, yardType: value }))
+          }
         >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="انتخاب محل" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="تهران">تهران</SelectItem>
-            <SelectItem value="مشهد">مشهد</SelectItem>
-            <SelectItem value="شیراز">شیراز</SelectItem>
+            <SelectItem value="شهری">شهری</SelectItem>
+            <SelectItem value="با باغ">با باغ</SelectItem>
+            <SelectItem value="فضای باز">فضای باز</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
-      {/* نوع ملک */}
+      <div className="w-full">
+        <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
+          حداقل اجاره
+        </label>
+        <Input
+          className="w-full"
+          type="number"
+          placeholder="مثلاً ۵۰۰۰۰۰۰"
+          onChange={(e) =>
+            setFilters((prev) => ({ ...prev, capacity: e.target.value }))
+          }
+        />
+      </div>
+
       <div className="w-full">
         <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
           نوع ملک
         </label>
         <Select
           dir="rtl"
-          onValueChange={(value) => handleChange("propertyType", value)}
+          name="categorie"
+          value={filters.categorie}
+          onValueChange={(value) =>
+            setFilters((prev) => ({ ...prev, categorie: value }))
+          }
         >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="انتخاب نوع ملک" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="آپارتمانی">آپارتمانی</SelectItem>
-            <SelectItem value="ویلایی">ویلایی</SelectItem>
-            <SelectItem value="مسکونی">مسکونی</SelectItem>
+            <SelectItem value="تهران">تهران</SelectItem>
+            <SelectItem value="اصفهان">اصفهان</SelectItem>
+            <SelectItem value="شیراز">شیراز</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
-      {/* نوع معامله */}
       <div className="w-full">
         <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
           نوع معامله
         </label>
         <Select
           dir="rtl"
-          onValueChange={(value) => handleChange("transactionType", value)}
+          name="transactionType"
+          value={filters.transactionType}
+          onValueChange={(value) =>
+            setFilters((prev) => ({ ...prev, transactionType: value }))
+          }
         >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="انتخاب نوع معامله" />
@@ -99,59 +146,6 @@ export default function FilterForm() {
         </Select>
       </div>
 
-      {/* حداقل اجاره */}
-      <div className="w-full">
-        <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
-          حداقل اجاره
-        </label>
-        <Input
-          className="w-full"
-          type="number"
-          placeholder="مثلاً ۵۰۰۰۰۰۰"
-          onChange={(e) => handleChange("minRent", e.target.value)}
-        />
-      </div>
-
-      {/* حداکثر اجاره */}
-      <div className="w-full">
-        <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
-          حداکثر اجاره
-        </label>
-        <Input
-          className="w-full"
-          type="number"
-          placeholder="مثلاً ۲۰۰۰۰۰۰۰"
-          onChange={(e) => handleChange("maxRent", e.target.value)}
-        />
-      </div>
-
-      {/* حداقل متراژ */}
-      <div className="w-full">
-        <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
-          حداقل متراژ
-        </label>
-        <Input
-          className="w-full"
-          type="number"
-          placeholder="مثلاً ۸۰"
-          onChange={(e) => handleChange("minArea", e.target.value)}
-        />
-      </div>
-
-      {/* حداکثر متراژ */}
-      <div className="w-full">
-        <label className="block text-sm font-medium text-gray-700 mb-1 font-[IranYekanRegular]">
-          حداکثر متراژ
-        </label>
-        <Input
-          className="w-full"
-          type="number"
-          placeholder="مثلاً ۲۰۰"
-          onChange={(e) => handleChange("maxArea", e.target.value)}
-        />
-      </div>
-
-      {/* دکمه جست‌وجو */}
       <div className="w-full sm:col-span-2">
         <button
           type="submit"

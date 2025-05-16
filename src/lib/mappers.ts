@@ -2,8 +2,8 @@ import { House } from "@/types/HouseMortgage/getHouse";
 import { TakhfifatCardProps } from "@/types/Landing/TakhfifatCardProps";
 
 export function mapHouseToCardProps(house: House): TakhfifatCardProps {
-  const oldPrice = Number(house.price) * 1.2; // فرضی: ۲۰٪ گرون‌تر
-  const discount = "۲۰"; // می‌تونی بعداً محاسبه‌اش کنی
+  const oldPrice = Number(house.price) * 1.2;
+  const discount = "۲۰"; 
 
   return {
     title: house.title,
@@ -15,5 +15,6 @@ export function mapHouseToCardProps(house: House): TakhfifatCardProps {
     capacity: house.capacity,
     bedCount: house.rooms,
     bathCount: house.bathrooms,
+    parking:house.parking,
   };
 }

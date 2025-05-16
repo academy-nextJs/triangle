@@ -1,3 +1,4 @@
+
 export interface House {
   id: string;
   title: string;
@@ -29,11 +30,12 @@ export interface House {
 
 export interface FilterParams {
   transactionType?: string;
+  capacity?: string;
   minPrice?: number;
   maxPrice?: number;
   rooms?: number;
   bathrooms?: number;
   parking?: boolean;
-  yard_type?: string;
-  categoryId?: number;
+  yardType?: string;
+  categorie?: string;
 }
