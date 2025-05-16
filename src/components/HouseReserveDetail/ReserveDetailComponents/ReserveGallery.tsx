@@ -20,10 +20,10 @@ export default function ReserveGallery({ photos }: ReserveGallerySliderProps) {
   };
 
   return (
-    <div className="flex  w-1/2 gap-4 my-6">
-      <div className="w-full px-10">
+    <div className="flex  md:w-1/2 gap-4 my-6">
+      <div className="w-full px-5 lg:px-10">
         {/* Main Image Slider */}
-        <div className="relative w-full min-h-[450px] rounded-xl overflow-hidden shadow">
+        <div className="relative w-full min-h-[350] lg:min-h-[450px] rounded-xl overflow-hidden shadow">
           <Image
             src={photos[currentImage]}
             alt="House"
@@ -47,11 +47,11 @@ export default function ReserveGallery({ photos }: ReserveGallerySliderProps) {
         </div>
 
         {/* Thumbnails */}
-        <div className="hidden md:flex justify-center gap-3 pr-3 mt-4">
+        <div className="flex justify-center gap-3 pr-3 mt-4">
           {photos.map((img, index) => (
             <div
               key={index}
-              className="relative w-20 h-16 rounded-md cursor-pointer shadow"
+              className="relative w-24 h-20 lg:w-48 lg:h-44 rounded-md cursor-pointer shadow"
             >
               <Image
                 src={img}

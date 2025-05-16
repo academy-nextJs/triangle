@@ -3,10 +3,10 @@
 import { useForm } from "react-hook-form";
 
 type BookingData = {
-  firstName: string;
-  lastName: string;
-  phone?: string;
-  email: string;
+  Date: string;
+  dDate: string;
+  code?: string;
+  people: number;
 };
 type Props = {
   house: {
@@ -23,7 +23,6 @@ export default function BookingForm({ house }: Props) {
 
   const onSubmit = (data: BookingData) => {
     console.log("Booking data:", data);
-    // Ideally send data to  API here
   };
 
   return (
@@ -32,57 +31,53 @@ export default function BookingForm({ house }: Props) {
       className=" rounded-xl space-y-4 pt-5  w-full "
       dir="rtl"
     >
-      <div className="flex flex-wrap justify-between [&>*]:flex-[0_0_48%]  px-2 gap-4">
+      <div className="flex flex-wrap justify-between  [&>*]:flex-[0_0_48%]  px-2 gap-4">
         <div>
           <p className="pb-2">تاریخ ورود </p>
 
           <input
-            {...register("firstName", { required: "نام الزامی است" })}
+            {...register("Date", { required: "تاریخ الزامی است" })}
             placeholder="وارد کنید"
             className={`w-full p-3 rounded-xl border ${
-              errors.firstName ? "border-red-500" : "border-gray-300"
+              errors.Date ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.firstName && (
-            <p className="text-red-400 text-sm mt-1">
-              {errors.firstName.message}
-            </p>
+          {errors.Date && (
+            <p className="text-red-400 text-sm mt-1">{errors.Date.message}</p>
           )}
         </div>
         <div>
           <p className="pb-2">تاریخ خروج </p>
 
           <input
-            {...register("lastName", { required: "نام خانوادگی الزامی است" })}
+            {...register("dDate", { required: "تاریخ الزامی است" })}
             placeholder="وارد کنید"
             className={`w-full p-3 rounded-xl border ${
-              errors.lastName ? "border-red-500" : "border-gray-300"
+              errors.dDate ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.lastName && (
-            <p className="text-red-400 text-sm mt-1">
-              {errors.lastName.message}
-            </p>
+          {errors.dDate && (
+            <p className="text-red-400 text-sm mt-1">{errors.dDate.message}</p>
           )}
         </div>
         <div className="">
           <p className="pb-2">تعداد نفرات </p>
 
           <input
-            {...register("email", {
-              required: "ایمیل الزامی است",
+            {...register("people", {
+              required: "تعداد الزامی است",
               pattern: {
                 value: /^\S+@\S+$/i,
-                message: "ایمیل معتبر نیست",
+                message: "تعداد معتبر نیست",
               },
             })}
             placeholder="وارد کنید"
             className={`w-full p-3 rounded-xl border ${
-              errors.email ? "border-red-500" : "border-gray-300"
+              errors.people ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.email && (
-            <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+          {errors.people && (
+            <p className="text-red-400 text-sm mt-1">{errors.people.message}</p>
           )}
         </div>{" "}
         <div>
@@ -91,7 +86,7 @@ export default function BookingForm({ house }: Props) {
           </p>
 
           <input
-            {...register("phone")}
+            {...register("code")}
             placeholder="وارد کنید"
             className="w-full p-3 rounded-xl border border-gray-300"
           />
