@@ -34,13 +34,13 @@ export default function ReserveGallery({ photos }: ReserveGallerySliderProps) {
           />
           <button
             onClick={prevImage}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white p-1 md:p-3 rounded-full shadow"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/50 hover:cursor-pointer p-1 md:p-3 rounded-full shadow"
           >
             <IoIosArrowBack className="text-lg text-gray-700" />
           </button>
           <button
             onClick={nextImage}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white p-1 md:p-3 rounded-full shadow"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/50 hover:cursor-pointer p-1 md:p-3 rounded-full shadow"
           >
             <IoIosArrowForward className="text-lg text-gray-700" />
           </button>

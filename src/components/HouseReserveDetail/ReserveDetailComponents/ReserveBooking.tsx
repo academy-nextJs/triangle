@@ -82,7 +82,7 @@ export default function BookingForm({ house }: Props) {
         </div>{" "}
         <div>
           <p className="flex pb-2">
-            کد تخفیف <p className="text-gray-500 pr-1">(اختیاری)</p>
+            کد تخفیف <span className="text-gray-500 pr-1">(اختیاری)</span>
           </p>
 
           <input
