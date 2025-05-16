@@ -1,18 +1,8 @@
+import { House } from "@/types/HouseMortgage/getHouse";
 import Image from "next/image";
 
 type Props = {
-  house: {
-    title: string;
-    price: string;
-    rate: string;
-    capacity: number;
-    rooms: number;
-    bathrooms: number;
-    parking: number;
-    yard_type: string;
-    tags: string[];
-    photos: string[];
-  };
+  house: House;
 };
 
 export function ReserveInfo({ house }: Props) {
@@ -54,24 +44,24 @@ export function ReserveInfo({ house }: Props) {
       </p>
       <p className="text-blue-500 pt-5">امکانات هتل</p>
 
-      <div className="flex gap-2 [&>*]:flex [&>*]:text-gray-500 [&>*]:[&>*]:text-black [&>*]:[&>*]:dark:text-white [&>*]:[&>*]:pr-1 [&>*]:border [&>*]:p-2 [&>*]:rounded-3xl">
+      <div className="flex flex-wrap gap-2 [&>*]:flex [&>*]:text-gray-500 [&>*]:[&>*]:text-black [&>*]:[&>*]:dark:text-white [&>*]:[&>*]:pr-1 [&>*]:border [&>*]:p-2 [&>*]:rounded-3xl">
         <p>
-          ظرفیت: <p>{house.capacity}نفر</p>
+          ظرفیت: <span>{house.capacity}نفر</span>
         </p>
         <p>
-          اتاق خواب: <p>{house.rooms}</p>
+          اتاق خواب: <span>{house.rooms}</span>
         </p>
         <p>
-          حمام: <p>{house.bathrooms}</p>
+          حمام: <span>{house.bathrooms}</span>
         </p>
         <p>
-          پارکینگ: <p>{house.parking}</p>
+          پارکینگ: <span>{house.parking}</span>
         </p>
         <p>
-          نوع حیاط: <p>{house.yard_type}</p>
+          نوع حیاط: <span>{house.yard_type}</span>
         </p>
         <p>
-          امتیاز: <p>{house.rate}</p>
+          امتیاز: <span>{house.rate}</span>
         </p>
       </div>
 
