@@ -31,7 +31,7 @@ export default function RootLayout({
                 exit={{ opacity: 0, scale: 0.98, y: -20 }}
                 transition={{
                   duration: 0.4,
-                  ease: [0.22, 1, 0.36, 1], // Ease-out curve (iOS-like)
+                  ease: [0.22, 1, 0.36, 1],
                 }}
               >
                 {children}
