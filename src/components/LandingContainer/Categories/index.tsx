@@ -14,6 +14,7 @@ export const CategoryGrid = async () => {
   const res = await getcategories();
 
   const posts: categories[] = await res;
+console.log(posts,"categori");
 
   return (
     <div className=" grid justify-center pt-20 px-4 ">
