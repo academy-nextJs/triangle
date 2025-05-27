@@ -4,7 +4,7 @@ import { mapFilters } from "../helper/Filter/mapFilter";
 
 export const useFilteredHouses = (filters: any) => {
   const mapped = mapFilters(filters);
-  console.log("Mapped Filters:", mapFilters);
+  console.log("Mapped Filters:", mapped);
 
   return useQuery({
     queryKey: ["filteredHouses", mapped],
