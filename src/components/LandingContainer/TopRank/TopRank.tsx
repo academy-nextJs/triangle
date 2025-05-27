@@ -21,7 +21,7 @@ const TopRank = () => {
             height={500}
             className="object-cover w-full h-auto  "
             priority
-          />
+          /> 
         </div>
       </motion.div>
 
