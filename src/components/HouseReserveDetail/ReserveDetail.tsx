@@ -1,10 +1,10 @@
 import { House } from "@/types/HouseMortgage/getHouse";
-import AddCommentForm from "./ReserveDetailComponents/ReserveAddComment";
-import ReserveBooking from "./ReserveDetailComponents/ReserveBooking";
-import ReserveDeComments from "./ReserveDetailComponents/ReserveDeComments";
-import ReserveGallery from "./ReserveDetailComponents/ReserveGallery";
-import { ReserveInfo } from "./ReserveDetailComponents/ReserveInfo";
-import SimilarAds from "./ReserveDetailComponents/SimilarAds";
+import AddCommentForm from "../common/DetailComponents/ReserveAddComment";
+import ReserveBooking from "../common/DetailComponents/ReserveBooking";
+import ReserveDeComments from "../common/DetailComponents/ReserveDeComments";
+import ReserveGallery from "../common/DetailComponents/ReserveGallery";
+import { ReserveInfo } from "../common/DetailComponents/ReserveInfo";
+import SimilarAds from "../common/DetailComponents/SimilarAds";
 
 export default function ReserveDetail({ house }: { house: House }) {
   return (
