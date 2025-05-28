@@ -67,7 +67,7 @@ export default function MainMap() {
 
   return (
     <MapContainer
-      className="rounded-r-4xl"
+      className="rounded-4xl"
       center={center}
       zoom={16}
       scrollWheelZoom={true}

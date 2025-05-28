@@ -105,7 +105,7 @@ const CommentItem = ({
           <img
             src={comment.user.profilePicture}
             alt={`${comment.user.fullName}'s profile`}
-            className="w-10 h-10 rounded-full object-cover"
+            className="w-10 h-10 rounded-full object-cover overflow-hidden"
           />
         ) : (
           <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
