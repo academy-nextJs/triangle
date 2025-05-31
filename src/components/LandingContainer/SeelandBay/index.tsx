@@ -5,7 +5,7 @@ import { BathIcon, BedIcon, Car } from "lucide-react";
 import Image from "next/image";
 import { TbHorseToy, TbMap2 } from "react-icons/tb";
 import apte from "../../../../public/ape.png";
-
+import {seelandbay} from "@/types/Landing/Seelandbay"
 export interface houses {
   id: string;
   title: string;
@@ -19,7 +19,7 @@ export interface houses {
 const SelandBoy = async () => {
   const data = await getAllhouses();
 
-  const houses: houses[] = await data;
+  const houses: seelandbay[] = await data;
   console.log(houses, "loofofo");
 
   return (
