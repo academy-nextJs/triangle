@@ -5,6 +5,7 @@
   font-style: normal;
 }
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @import "tw-animate-css";
 
@@ -14,6 +15,89 @@
   --background: #ffffff;
   --foreground: #171717;
 } */
+.leaflet-popup-content-wrapper {
+  background: #586cff;
+}
+.leaflet-popup-tip {
+  background: #586cff;
+}
+.leaflet-popup-content {
+  margin: 5px 20px 10px 0px;
+}
+.avatar-marker img {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+  font-family: "IranYekanBlack";
+  src: url("../assets/Fonts/IRANYekanX-Black.woff");
+}
+
+.BlackFont {
+  font-family: "IranYekanBlack";
+}
+@font-face {
+  font-family: "IranYekanBold";
+  src: url("../assets/Fonts/IRANYekanX-Bold.woff");
+}
+
+.BoldFont {
+  font-family: "IranYekanBold";
+}
+@font-face {
+  font-family: "IranYekanExtraBlack";
+  src: url("../assets/Fonts/IRANYekanX-ExtraBlack.woff");
+}
+
+.ExtraBlackFont {
+  font-family: "IranYekanExtraBlack";
+}
+
+@font-face {
+  font-family: "IranYekanExtraBold";
+  src: url("../assets/fonts/IRANYekanX-ExtraBold.woff");
+}
+
+.ExtraBoldFont {
+  font-family: "IranYekanExtraBold";
+}
+@font-face {
+  font-family: "IranYekanHeavy";
+  src: url("../assets/fonts/IRANYekanX-Heavy.woff");
+}
+
+.LightFont {
+  font-family: "IranYekanHeavy";
+}
+@font-face {
+  font-family: "IranYekanRegular";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff");
+}
+
+.RegularFont {
+  font-family: "IranYekanRegular";
+}
+@font-face {
+  font-family: "IranYekanMedium";
+  src: url("../assets/fonts/IRANYekanX-Medium.woff");
+}
+
+.SemiBoldFont {
+  font-family: "IranYekanMedium";
+}
+@font-face {
+  font-family: "IranYekanThin";
+  src: url("../assets/fonts/IRANYekanX-Thin.woff");
+}
+
+.ThinFont {
+  font-family: "IranYekanThin";
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -137,4 +221,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  transition: background-color 1s ease, color 1s ease;
+}
+body {
+  transition: background-color 1s ease, color 1s ease;
 }
